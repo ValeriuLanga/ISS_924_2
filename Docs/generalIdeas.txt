@@ -1,0 +1,17 @@
+1). la update donor, in fereastra de UI ar trebui sa apara field urile pre-completate
+cu datele actuale ale user uluri si el poate edita ce vrea. Dupa se face un client 
+temporar pt a l valida si se updateaza
+
+2). QUESTION: what donation information can the donor change?
+
+3). bloodContainer clasa de baza din care se vor deriva : trombocite, plasma, celule rosii
+	request urile de bloodContainer sunt specifice pt clasele derivat (i.e. cere plasma sau celule rosii etc)
+	rename analysis into BiologicalQualityCOntrol
+	
+4). admin -  tot un user
+	
+	AddUser(User)			!!! polimorifc
+	RemoveUser(User)
+	UpdateUser(User)
+	
+5). patient - hospital, bloodType -> implementeaza user
