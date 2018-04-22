@@ -1,0 +1,6 @@
+rootProject.name = 'ISS_924_2'
+include 'Client'
+include 'Server'
+include 'Core'
+include 'Tests'
+
