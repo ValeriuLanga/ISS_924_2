@@ -2,43 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="143726e0-cc8d-4761-a098-5d57cd9b9dfc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/ISS_924_2/Domain/Administrator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/ISS_924_2/Domain/Analysis.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/ISS_924_2/Domain/Blood.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/ISS_924_2/Domain/BloodContainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/ISS_924_2/Domain/BloodDonation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/ISS_924_2/Domain/BloodSample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/ISS_924_2/Domain/Doctor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/ISS_924_2/Domain/Donation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/ISS_924_2/Domain/Donor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/ISS_924_2/Domain/Hospital.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/ISS_924_2/Domain/Patient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/ISS_924_2/Domain/Personnel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/ISS_924_2/Domain/Request.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/main/java/ISS_924_2/Domain/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/ServerDiagram.mdj" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/ServerDiagram.mdj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServerDiagram.mdj" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="PersonnelService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BloodDonationJavaApplication/Server/src/main/java/ISS_924_2/Services/PersonnelService.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -58,8 +23,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpringServer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/BloodDonationJavaApplication/Server/src/main/java/ISS_924_2/SpringServer/SpringServer.java">
+      <file leaf-file-name="settings.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BloodDonationJavaApplication/settings.gradle">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BloodDonationJavaApplication/build.gradle">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -95,6 +65,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -182,7 +153,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -257,38 +227,39 @@
       <option name="presentableId" value="Default" />
       <updated>1524406368869</updated>
       <workItem from="1524406371716" duration="44000" />
+      <workItem from="1524406555693" duration="18000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44000" />
+    <option name="totallyTimeSpent" value="62000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info id="Designer" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
+      <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,7 +276,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BloodDonationJavaApplication/Server/src/main/java/ISS_924_2/SpringServer/SpringServer.java">
+    <entry file="file://$PROJECT_DIR$/BloodDonationJavaApplication/Server/src/main/java/ISS_924_2/Services/PersonnelService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BloodDonationJavaApplication/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BloodDonationJavaApplication/build.gradle">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
