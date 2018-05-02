@@ -1,4 +1,4 @@
-rootProject.name = 'ISS_924_2'
+rootProject.name = 'iss_924_2'
 include 'Client'
 include 'Server'
 include 'Core'

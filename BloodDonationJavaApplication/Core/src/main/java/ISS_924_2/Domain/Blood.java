@@ -1,10 +1,23 @@
+package iss_924_2.domain;
 
+import javax.persistence.Entity;
 import java.util.*;
 
 /**
  * 
  */
-public class Blood {
+@Entity
+public class Blood extends Identifier<Integer> {
+
+    /**
+     *
+     */
+    private enum bloodType {};
+
+    /**
+     *
+     */
+    private boolean isRhPositive;
 
     /**
      * Default constructor
@@ -12,16 +25,12 @@ public class Blood {
     public Blood() {
     }
 
-    /**
-     * 
-     */
-    private enum bloodType;
+    public boolean isRhPositive() {
+        return isRhPositive;
+    }
 
-    /**
-     * 
-     */
-    private bool isRhPositive;
-
-
+    public void setRhPositive(boolean rhPositive) {
+        isRhPositive = rhPositive;
+    }
 
 }

@@ -2,8 +2,12 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="c_main" target="1.8" />
+      <module name="c_test" target="1.8" />
       <module name="common_main" target="1.8" />
       <module name="common_test" target="1.8" />
+      <module name="ISS_924_2_main" target="1.8" />
+      <module name="ISS_924_2_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

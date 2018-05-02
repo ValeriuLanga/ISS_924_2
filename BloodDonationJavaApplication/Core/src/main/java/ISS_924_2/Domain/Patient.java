@@ -1,10 +1,12 @@
+package iss_924_2.domain;
 
-import java.util.*;
+import javax.persistence.Entity;
 
 /**
  * 
  */
-public class Patient extends User {
+@Entity
+public class Patient extends Identifier<Integer> {
 
     /**
      * Default constructor
@@ -23,4 +25,19 @@ public class Patient extends User {
     public Hospital Hospital;
 
 
+    public Blood getBlood() {
+        return Blood;
+    }
+
+    public Hospital getHospital() {
+        return Hospital;
+    }
+
+    public void setBlood(Blood blood) {
+        Blood = blood;
+    }
+
+    public void setHospital(Hospital hospital) {
+        Hospital = hospital;
+    }
 }

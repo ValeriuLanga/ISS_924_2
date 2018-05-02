@@ -1,5 +1,10 @@
+package iss_924_2.springserver;
 
-import java.util.*;
+import iss_924_2.domain.User;
+import iss_924_2.services.AdminServiceServer;
+import iss_924_2.services.DoctorServiceServer;
+import iss_924_2.services.DonorServiceServer;
+import iss_924_2.services.PersonnelServiceServer;
 
 /**
  * 
@@ -15,26 +20,22 @@ public class SpringServer {
     /**
      * 
      */
-    private DonorService donorService;
+    private DonorServiceServer donorService;
 
     /**
      * 
      */
-    private PersonnelService personnelService;
+    private PersonnelServiceServer personnelService;
 
     /**
      * 
      */
-    private DoctorService doctorService;
+    private DoctorServiceServer doctorService;
 
     /**
      * 
      */
-    private AdminService adminService;
-
-
-
-
+    private AdminServiceServer adminService;
 
     /**
      * 
@@ -44,9 +45,9 @@ public class SpringServer {
     }
 
     /**
-     * @param User
+     * @param user
      */
-    private void validateUserCredentials(void User) {
+    private void validateUserCredentials(User user) {
         // TODO implement here
     }
 

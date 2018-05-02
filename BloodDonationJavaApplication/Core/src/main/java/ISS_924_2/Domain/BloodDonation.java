@@ -1,10 +1,13 @@
+package iss_924_2.domain;
 
+import javax.persistence.Entity;
 import java.util.*;
 
 /**
  * 
  */
-public class BloodDonation {
+@Entity
+public class BloodDonation extends Identifier<Integer> {
 
     /**
      * Default constructor
@@ -23,21 +26,37 @@ public class BloodDonation {
     private int quantity;
 
     /**
-     * 
+     *
      */
-    private enum state;
+    private enum state {};
 
     /**
-     * 
+     *
      */
-    private date expirationDate;
+    private Date expirationDate;
 
+    public int getBloodId() {
+        return bloodId;
+    }
 
-    /**
-     * 
-     */
-    public Donation 1;
+    public int getQuantity() {
+        return quantity;
+    }
 
+    public Date getExpirationDate() {
+        return expirationDate;
+    }
 
+    public void setBloodId(int bloodId) {
+        this.bloodId = bloodId;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public void setExpirationDate(Date expirationDate) {
+        this.expirationDate = expirationDate;
+    }
 
 }
