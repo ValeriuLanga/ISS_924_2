@@ -1,10 +1,28 @@
+package iss_924_2.domain;
 
+import javax.persistence.Entity;
 import java.util.*;
 
 /**
  * 
  */
-public class BloodContainer {
+@Entity
+public class BloodContainer extends Identifier<Integer> {
+
+    /**
+     *
+     */
+    private Date shelfLife;
+
+    /**
+     *
+     */
+    private enum ContainerType {};
+
+    /**
+     *
+     */
+    public enum status {};
 
     /**
      * Default constructor
@@ -13,27 +31,19 @@ public class BloodContainer {
     }
 
     /**
-     * 
-     */
-    private enum ContainerType;
-
-    /**
-     * 
-     */
-    private Date shelfLife;
-
-    /**
-     * 
-     */
-    public enum status;
-
-
-    /**
      * @return
      */
-    public bool IsExpired() {
+    public boolean isExpired() {
         // TODO implement here
-        return null;
+        return false;
+    }
+
+    public Date getShelfLife() {
+        return shelfLife;
+    }
+
+    public void setShelfLife(Date shelfLife) {
+        this.shelfLife = shelfLife;
     }
 
 }

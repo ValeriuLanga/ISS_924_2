@@ -1,10 +1,12 @@
+package iss_924_2.domain;
 
-import java.util.*;
+import javax.persistence.Entity;
 
 /**
  * 
  */
-public class Donation {
+@Entity
+public class Donation extends Identifier<Integer> {
 
     /**
      * Default constructor
@@ -15,7 +17,7 @@ public class Donation {
     /**
      * 
      */
-    private void donationId;
+    private int donationId;
 
     /**
      * 
@@ -28,5 +30,27 @@ public class Donation {
     private Donor donor;
 
 
+    public int getDonationId() {
+        return donationId;
+    }
 
+    public BloodDonation getBlood() {
+        return blood;
+    }
+
+    public Donor getDonor() {
+        return donor;
+    }
+
+    public void setDonationId(int donationId) {
+        this.donationId = donationId;
+    }
+
+    public void setBlood(BloodDonation blood) {
+        this.blood = blood;
+    }
+
+    public void setDonor(Donor donor) {
+        this.donor = donor;
+    }
 }

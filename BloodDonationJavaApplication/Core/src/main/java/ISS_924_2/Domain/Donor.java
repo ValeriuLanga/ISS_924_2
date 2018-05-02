@@ -1,9 +1,12 @@
+package iss_924_2.domain;
 
+import javax.persistence.Entity;
 import java.util.*;
 
 /**
  * 
  */
+@Entity
 public class Donor extends User {
 
     /**
@@ -27,51 +30,27 @@ public class Donor extends User {
      */
     private Address actualAddress;
 
-    /**
-     * 
-     */
-    public Donation 1;
-
-    /**
-     * @return
-     */
-    public Set<Analysis> viewBloodAnalysisHistory() {
-        // TODO implement here
-        return null;
+    public Date getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    /**
-     * @return
-     */
-    public Date viewNextDonationDate() {
-        // TODO implement here
-        return null;
+    public Address getAddress() {
+        return address;
     }
 
-    /**
-     * @param Donor 
-     * @return
-     */
-    public void changePersonalInfo(void Donor) {
-        // TODO implement here
-        return null;
+    public Address getActualAddress() {
+        return actualAddress;
     }
 
-    /**
-     * @return
-     */
-    public void changeDonationInfo() {
-        // TODO implement here
-        return null;
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
-    /**
-     * @param string 
-     * @return
-     */
-    public void donateToSpecificPerson(void string) {
-        // TODO implement here
-        return null;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
+    public void setActualAddress(Address actualAddress) {
+        this.actualAddress = actualAddress;
+    }
 }
