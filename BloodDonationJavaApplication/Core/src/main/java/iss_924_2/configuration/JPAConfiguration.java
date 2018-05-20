@@ -1,4 +1,4 @@
-package iss_924_2.configuration;
+package ISS_924_2.configuration;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;

@@ -1,7 +1,7 @@
-package iss_924_2.service;
+package ISS_924_2.service;
 
-import iss_924_2.domain.Donor;
-import iss_924_2.domain.Patient;
+import ISS_924_2.Domain.Donor;
+import ISS_924_2.Domain.Patient;
 
 public interface PersonnelService {
 
