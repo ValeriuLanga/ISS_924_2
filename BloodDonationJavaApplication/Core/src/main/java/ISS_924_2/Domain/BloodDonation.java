@@ -14,11 +14,11 @@ public class BloodDonation extends Identifier<Integer> {
      */
     public BloodDonation() {}
 
-    public BloodDonation(int bloodId, int quantity, State state) {
+    public BloodDonation(int bloodId, int quantity) {
 
         this.bloodId = bloodId;
         this.quantity = quantity;
-        this.state = state;
+        //this.state = state;
     }
 
     /**
@@ -34,9 +34,10 @@ public class BloodDonation extends Identifier<Integer> {
     /**
      *
      */
-    private enum State {};
-
-    private State state;
+    //WTFFFFFFF
+//    private enum State {};
+//
+//    private State state;
 
     /**
      *
