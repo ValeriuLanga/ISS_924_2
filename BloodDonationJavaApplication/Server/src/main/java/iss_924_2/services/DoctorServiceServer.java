@@ -57,7 +57,7 @@ public class DoctorServiceServer implements DoctorService {
      *
      */
     public boolean checkDonationForPerson() {
-        // TODO implement here
+        // TODO implement here    /**
         return true;
     }
 
