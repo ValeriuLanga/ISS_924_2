@@ -1,3 +1,4 @@
+package ISS_924_2.Domain;
 
 import java.util.*;
 
@@ -15,21 +16,21 @@ public class User {
     /**
      * 
      */
-    private string usesrName;
+    private String usesrName;
 
     /**
      * 
      */
-    private string password;
+    private String password;
 
     /**
      * 
      */
-    private string firstName;
+    private String firstName;
 
     /**
      * 
      */
-    private string lastName;
+    private String lastName;
 
 }
