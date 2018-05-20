@@ -1,4 +1,4 @@
-package ISS_924_2.Domain;
+package iss_924_2.domain;
 
 import javax.persistence.Entity;
 import java.util.*;
@@ -12,7 +12,13 @@ public class BloodDonation extends Identifier<Integer> {
     /**
      * Default constructor
      */
-    public BloodDonation() {
+    public BloodDonation() {}
+
+    public BloodDonation(int bloodId, int quantity, State state) {
+
+        this.bloodId = bloodId;
+        this.quantity = quantity;
+        this.state = state;
     }
 
     /**
@@ -28,7 +34,9 @@ public class BloodDonation extends Identifier<Integer> {
     /**
      *
      */
-    private enum state {};
+    private enum State {};
+
+    private State state;
 
     /**
      *

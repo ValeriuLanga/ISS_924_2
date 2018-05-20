@@ -1,4 +1,4 @@
-package ISS_924_2.Domain;
+package iss_924_2.domain;
 
 import javax.persistence.Entity;
 
@@ -11,7 +11,12 @@ public class Patient extends Identifier<Integer> {
     /**
      * Default constructor
      */
-    public Patient() {
+    public Patient() {}
+
+    public Patient(Blood blood, Hospital hospital) {
+
+        this.Blood = blood;
+        this.Hospital = hospital;
     }
 
     /**

@@ -1,4 +1,4 @@
-package ISS_924_2.Domain;
+package iss_924_2.domain;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -14,7 +14,7 @@ public class Identifier<ID> implements Serializable {
 
     @Id
     @GeneratedValue
-    @Column(unique = true,nullable = false)
+    @Column(unique = true, nullable = false)
     private ID id;
 
     public Identifier() {

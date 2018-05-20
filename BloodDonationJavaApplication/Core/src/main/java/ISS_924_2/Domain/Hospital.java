@@ -1,4 +1,4 @@
-package ISS_924_2.Domain;
+package iss_924_2.domain;
 
 import javax.persistence.Entity;
 import java.util.*;
@@ -12,7 +12,13 @@ public class Hospital extends Identifier<Integer> {
     /**
      * Default constructor
      */
-    public Hospital() {
+    public Hospital() {}
+
+    public Hospital(String name, Address address) {
+
+        this.name = name;
+        this.address = address;
+        this.bloodStock = new HashSet<BloodContainer>();
     }
 
     /**

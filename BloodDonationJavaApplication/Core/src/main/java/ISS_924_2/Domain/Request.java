@@ -1,4 +1,6 @@
-package ISS_924_2.Domain;
+package iss_924_2.domain;
+
+import iss_924_2.utils.RequestStatus;
 
 import javax.persistence.Entity;
 
@@ -11,7 +13,15 @@ public class Request extends Identifier<Integer> {
     /**
      * Default constructor
      */
-    public Request() {
+    public Request() {}
+
+    public Request(int requestId, int urgencyLevel, Doctor doctor, Hospital locationWhereBloodIsNeeded, RequestStatus status) {
+
+        this.requestId = requestId;
+        this.urgencyLevel = urgencyLevel;
+        this.doctor = doctor;
+        this.locationWhereBloodIsNeeded = locationWhereBloodIsNeeded;
+        this.status = status;
     }
 
     /**
@@ -37,7 +47,7 @@ public class Request extends Identifier<Integer> {
     /**
      *
      */
-    private enum status {};
+    private RequestStatus status;
 
     /**
      *

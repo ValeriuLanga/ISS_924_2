@@ -1,4 +1,4 @@
-package ISS_924_2.Domain;
+package iss_924_2.domain;
 
 import javax.persistence.Entity;
 import java.util.*;
@@ -12,7 +12,14 @@ public class Donor extends User {
     /**
      * Default constructor
      */
-    public Donor() {
+    public Donor() {}
+
+    public Donor(String userName, String password, String firstName, String lastName, Date dateOfBirth, Address address, Address actualAddress) {
+
+        super(userName, password, firstName, lastName);
+        this.dateOfBirth = dateOfBirth;
+        this.address = address;
+        this.actualAddress = actualAddress;
     }
 
     /**

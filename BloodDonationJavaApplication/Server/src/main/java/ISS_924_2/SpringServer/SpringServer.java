@@ -1,14 +1,10 @@
-package ISS_924_2.SpringServer;
+package iss_924_2.SpringServer;
 
-import ISS_924_2.services.AdminServiceServer;
-import ISS_924_2.services.DoctorServiceServer;
-import ISS_924_2.services.DonorServiceServer;
-import ISS_924_2.services.PersonnelServiceServer;
-import ISS_924_2.Domain.User;
-import ISS_924_2.services.AdminServiceServer;
-import ISS_924_2.services.DoctorServiceServer;
-import ISS_924_2.services.DonorServiceServer;
-import ISS_924_2.services.PersonnelServiceServer;
+import iss_924_2.services.AdminServiceServer;
+import iss_924_2.services.DoctorServiceServer;
+import iss_924_2.services.DonorServiceServer;
+import iss_924_2.services.PersonnelServiceServer;
+import iss_924_2.domain.User;
 
 /**
  * 

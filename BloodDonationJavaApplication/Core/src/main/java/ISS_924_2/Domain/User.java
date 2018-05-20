@@ -1,7 +1,6 @@
-package ISS_924_2.Domain;
+package iss_924_2.domain;
 
 import javax.persistence.Entity;
-import java.util.*;
 
 /**
  * 
@@ -12,7 +11,14 @@ public class User extends Identifier<Integer> {
     /**
      * Default constructor
      */
-    public User() {
+    public User(){}
+
+    public User(String userName, String password, String firstName, String lastName) {
+
+        this.userName = userName;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     /**
