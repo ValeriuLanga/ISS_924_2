@@ -1,4 +1,4 @@
-package iss_924_2.services;
+package ISS_924_2.services;
 
 import iss_924_2.domain.Blood;
 import iss_924_2.domain.BloodContainer;
@@ -57,7 +57,7 @@ public class DoctorServiceServer implements DoctorService {
      *
      */
     public boolean checkDonationForPerson() {
-        // TODO implement here
+        // TODO implement here    /**
         return true;
     }
 

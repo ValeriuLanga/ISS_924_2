@@ -1,6 +1,6 @@
-package iss_924_2.repository;
+package ISS_924_2.repository;
 
-import iss_924_2.domain.Identifier;
+import ISS_924_2.Domain.Identifier;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.transaction.annotation.Transactional;
