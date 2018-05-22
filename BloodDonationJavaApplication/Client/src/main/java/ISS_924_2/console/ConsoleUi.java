@@ -1,9 +1,9 @@
-package ISS_924_2.console;
+package iss_924_2.console;
 
-import ISS_924_2.service.AdminService;
-import ISS_924_2.service.DoctorService;
-import ISS_924_2.service.DonorService;
-import ISS_924_2.service.PersonnelService;
+import iss_924_2.service.AdminService;
+import iss_924_2.service.DoctorService;
+import iss_924_2.service.DonorService;
+import iss_924_2.service.PersonnelService;
 
 public class ConsoleUi {
 

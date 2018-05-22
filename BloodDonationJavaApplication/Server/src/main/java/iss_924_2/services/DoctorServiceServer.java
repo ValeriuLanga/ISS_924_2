@@ -1,4 +1,4 @@
-package ISS_924_2.services;
+package iss_924_2.services;
 
 import iss_924_2.domain.Blood;
 import iss_924_2.domain.BloodContainer;

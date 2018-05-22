@@ -1,10 +1,10 @@
-package ISS_924_2.service;
+package iss_924_2.service;
 
-import ISS_924_2.Domain.Blood;
-import ISS_924_2.Domain.BloodContainer;
-import ISS_924_2.Domain.Doctor;
-import ISS_924_2.Domain.Hospital;
-import ISS_924_2.repository.Repository;
+import iss_924_2.domain.Blood;
+import iss_924_2.domain.BloodContainer;
+import iss_924_2.domain.Doctor;
+import iss_924_2.domain.Hospital;
+import iss_924_2.repository.Repository;
 
 import java.util.Set;
 

@@ -1,6 +1,6 @@
-package ISS_924_2;
+package iss_924_2;
 
-import ISS_924_2.console.ConsoleUi;
+import iss_924_2.console.ConsoleUi;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class ClientAppConsole {

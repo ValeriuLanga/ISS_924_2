@@ -1,7 +1,7 @@
-package ISS_924_2.configuration;
+package iss_924_2.configuration;
 
-import ISS_924_2.console.ConsoleUi;
-import ISS_924_2.service.*;
+import iss_924_2.console.ConsoleUi;
+import iss_924_2.service.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.remoting.rmi.RmiProxyFactoryBean;
 

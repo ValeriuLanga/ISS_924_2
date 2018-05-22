@@ -1,4 +1,4 @@
-package ISS_924_2.Domain;
+package iss_924_2.domain;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
