@@ -1,4 +1,4 @@
-package iss_924_2.domain;
+package iss_924_2.Domain;
 
 import javax.persistence.Entity;
 
@@ -6,13 +6,12 @@ import javax.persistence.Entity;
  * 
  */
 @Entity
-public class Administrator extends iss_924_2.domain.User {
+public class Administrator extends iss_924_2.Domain.User {
 
     /**
      * Default constructor
      */
-    public Administrator(String username, String password, String firstName, String lastName) {
-        super(username, password, firstName, lastName);
+    public Administrator() {
     }
 
 }

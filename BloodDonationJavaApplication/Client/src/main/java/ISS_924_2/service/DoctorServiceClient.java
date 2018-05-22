@@ -1,8 +1,8 @@
-package ISS_924_2.service;
+package iss_924_2.service;
 
-import ISS_924_2.Domain.Blood;
-import ISS_924_2.Domain.BloodContainer;
-import ISS_924_2.Domain.Hospital;
+import iss_924_2.Domain.Blood;
+import iss_924_2.Domain.BloodContainer;
+import iss_924_2.Domain.Hospital;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Set;

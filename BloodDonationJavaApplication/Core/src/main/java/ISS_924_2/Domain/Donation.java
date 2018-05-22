@@ -1,4 +1,4 @@
-package iss_924_2.domain;
+package iss_924_2.Domain;
 
 import javax.persistence.Entity;
 
@@ -12,13 +12,7 @@ public class Donation extends Identifier<Integer> {
     /**
      * Default constructor
      */
-    public Donation() {}
-
-    public Donation(int donationId, BloodDonation blood, Donor donor) {
-
-        this.donationId = donationId;
-        this.blood = blood;
-        this.donor = donor;
+    public Donation() {
     }
 
     /**

@@ -1,4 +1,4 @@
-package iss_924_2.domain;
+package iss_924_2.Domain;
 
 import javax.persistence.Entity;
 
@@ -24,16 +24,6 @@ public class Address extends Identifier<Integer> {
      *
      */
     private String country;
-
-    public Address() {}
-
-    public Address(String street, String number, String city, String country){
-
-        this.street = street;
-        this.number = number;
-        this.city = city;
-        this.country = country;
-    }
 
     public String getStreet() {
         return street;

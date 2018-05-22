@@ -1,7 +1,7 @@
-package ISS_924_2.service;
+package iss_924_2.service;
 
-import ISS_924_2.Domain.Analysis;
-import ISS_924_2.Domain.Donor;
+import iss_924_2.Domain.Analysis;
+import iss_924_2.Domain.Donor;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;

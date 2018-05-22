@@ -1,7 +1,4 @@
-package iss_924_2.domain;
-
-import iss_924_2.utils.ContainerType;
-import iss_924_2.utils.Status;
+package iss_924_2.Domain;
 
 import javax.persistence.Entity;
 import java.util.*;
@@ -20,26 +17,17 @@ public class BloodContainer extends Identifier<Integer> {
     /**
      *
      */
-
-    private ContainerType containerType;
+    private enum ContainerType {};
 
     /**
      *
      */
-
-    private Status status;
+    public enum status {};
 
     /**
      * Default constructor
      */
     public BloodContainer() {
-    }
-
-    public BloodContainer(Date shelfLife, ContainerType containerType, Status status) {
-
-        this.shelfLife = shelfLife;
-        this.containerType = containerType;
-        this.status = status;
     }
 
     /**

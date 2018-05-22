@@ -1,6 +1,7 @@
-package iss_924_2.domain;
+package iss_924_2.Domain;
 
 import javax.persistence.Entity;
+import java.util.*;
 
 /**
  * 
@@ -11,9 +12,7 @@ public class Doctor extends User {
     /**
      * Default constructor
      */
-    public Doctor(String userName, String password, String firstName, String lastName) {
-
-        super(userName, password, firstName, lastName);
+    public Doctor() {
     }
 
 }

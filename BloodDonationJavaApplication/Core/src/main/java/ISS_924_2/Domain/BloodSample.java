@@ -1,4 +1,4 @@
-package iss_924_2.domain;
+package iss_924_2.Domain;
 
 import javax.persistence.Entity;
 
@@ -11,12 +11,7 @@ public class BloodSample extends Identifier<Integer> {
     /**
      * Default constructor
      */
-    public BloodSample() {}
-
-    public BloodSample(int bloodSampleId, int quantity) {
-
-        this.bloodSampleId = bloodSampleId;
-        this.quantity = quantity;
+    public BloodSample() {
     }
 
     /**

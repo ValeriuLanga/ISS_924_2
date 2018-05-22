@@ -1,8 +1,7 @@
-package iss_924_2.domain;
-
-import iss_924_2.utils.BloodType;
+package iss_924_2.Domain;
 
 import javax.persistence.Entity;
+import java.util.*;
 
 /**
  * 
@@ -13,8 +12,7 @@ public class Blood extends Identifier<Integer> {
     /**
      *
      */
-
-    private BloodType bloodType;
+    private enum bloodType {};
 
     /**
      *
@@ -24,12 +22,7 @@ public class Blood extends Identifier<Integer> {
     /**
      * Default constructor
      */
-    public Blood() {}
-
-    public Blood(BloodType bloodType, boolean isRhPositive) {
-
-        this.bloodType = bloodType;
-        this.isRhPositive = isRhPositive;
+    public Blood() {
     }
 
     public boolean isRhPositive() {

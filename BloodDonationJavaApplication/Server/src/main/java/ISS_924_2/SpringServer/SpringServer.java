@@ -4,7 +4,15 @@ import iss_924_2.services.AdminServiceServer;
 import iss_924_2.services.DoctorServiceServer;
 import iss_924_2.services.DonorServiceServer;
 import iss_924_2.services.PersonnelServiceServer;
+<<<<<<< HEAD
 import iss_924_2.domain.User;
+=======
+import iss_924_2.Domain.User;
+import iss_924_2.services.AdminServiceServer;
+import iss_924_2.services.DoctorServiceServer;
+import iss_924_2.services.DonorServiceServer;
+import iss_924_2.services.PersonnelServiceServer;
+>>>>>>> 2f2893de3982d852dce811ed34ddac99029b3255
 
 /**
  * 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package iss_924_2.domain;
+=======
+package iss_924_2.Domain;
+>>>>>>> 2f2893de3982d852dce811ed34ddac99029b3255
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
