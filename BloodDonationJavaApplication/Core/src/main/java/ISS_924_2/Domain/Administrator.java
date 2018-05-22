@@ -11,7 +11,8 @@ public class Administrator extends iss_924_2.domain.User {
     /**
      * Default constructor
      */
-    public Administrator() {
+    public Administrator(String username, String password, String firstName, String lastName) {
+        super(username, password, firstName, lastName);
     }
 
 }
