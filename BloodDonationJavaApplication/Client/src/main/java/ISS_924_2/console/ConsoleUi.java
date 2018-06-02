@@ -21,7 +21,6 @@ public class ConsoleUi {
 
     public void start(){
         while (true){
-
         }
     }
 
