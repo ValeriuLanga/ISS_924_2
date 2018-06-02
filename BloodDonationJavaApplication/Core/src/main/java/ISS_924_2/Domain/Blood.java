@@ -1,43 +1,24 @@
 package iss_924_2.domain;
 
 import iss_924_2.utils.BloodType;
+import lombok.*;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import java.util.HashSet;
+import java.util.Set;
 
-/**
- * 
- */
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
-public class Blood extends Identifier<Integer> {
-
-    /**
-     *
-     */
+@Data
+public class Blood extends BaseEntity<Integer> {
 
     private BloodType bloodType;
 
-    /**
-     *
-     */
     private boolean isRhPositive;
-
-    /**
-     * Default constructor
-     */
-    public Blood() {}
-
-    public Blood(BloodType bloodType, boolean isRhPositive) {
-
-        this.bloodType = bloodType;
-        this.isRhPositive = isRhPositive;
-    }
-
-    public boolean isRhPositive() {
-        return isRhPositive;
-    }
-
-    public void setRhPositive(boolean rhPositive) {
-        isRhPositive = rhPositive;
-    }
-
 }

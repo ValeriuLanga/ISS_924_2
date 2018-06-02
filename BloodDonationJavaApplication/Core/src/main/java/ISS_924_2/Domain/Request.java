@@ -1,97 +1,30 @@
 package iss_924_2.domain;
 
+import iss_924_2.utils.ContainerType;
 import iss_924_2.utils.RequestStatus;
+import lombok.*;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
-/**
- * 
- */
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
-public class Request extends Identifier<Integer> {
+@Data
+public class Request extends BaseEntity<Integer> {
 
-    /**
-     * Default constructor
-     */
-    public Request() {}
-
-    public Request(int requestId, int urgencyLevel, Doctor doctor, Hospital locationWhereBloodIsNeeded, RequestStatus status) {
-
-        this.requestId = requestId;
-        this.urgencyLevel = urgencyLevel;
-        this.doctor = doctor;
-        this.locationWhereBloodIsNeeded = locationWhereBloodIsNeeded;
-        this.status = status;
-    }
-
-    /**
-     * 
-     */
-    private int requestId;
-
-    /**
-     * 
-     */
     private int urgencyLevel;
 
-    /**
-     * 
-     */
+    @ManyToOne(fetch = FetchType.EAGER)
     private Doctor doctor;
 
-    /**
-     * 
-     */
-    private Hospital locationWhereBloodIsNeeded;
+    private RequestStatus status = RequestStatus.registered;
 
-    /**
-     *
-     */
-    private RequestStatus status;
+    private ContainerType containerType;
 
-    /**
-     *
-     */
-    private BloodContainer bloodContainer;
-
-    public int getRequestId() {
-        return requestId;
-    }
-
-    public int getUrgencyLevel() {
-        return urgencyLevel;
-    }
-
-    public Doctor getDoctor() {
-        return doctor;
-    }
-
-    public Hospital getLocationWhereBloodIsNeeded() {
-        return locationWhereBloodIsNeeded;
-    }
-
-    public BloodContainer getBloodContainer() {
-        return bloodContainer;
-    }
-
-    public void setRequestId(int requestId) {
-        this.requestId = requestId;
-    }
-
-    public void setUrgencyLevel(int urgencyLevel) {
-        this.urgencyLevel = urgencyLevel;
-    }
-
-    public void setDoctor(Doctor doctor) {
-        this.doctor = doctor;
-    }
-
-    public void setLocationWhereBloodIsNeeded(Hospital locationWhereBloodIsNeeded) {
-        this.locationWhereBloodIsNeeded = locationWhereBloodIsNeeded;
-    }
-
-    public void setBloodContainer(BloodContainer bloodContainer) {
-        this.bloodContainer = bloodContainer;
-    }
-
+    private int quantity;
 }
