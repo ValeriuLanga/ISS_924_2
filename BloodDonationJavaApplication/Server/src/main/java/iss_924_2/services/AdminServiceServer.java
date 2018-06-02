@@ -3,6 +3,9 @@ package iss_924_2.services;
 import iss_924_2.domain.User;
 import iss_924_2.repository.Repository;
 import iss_924_2.service.AdminService;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.Optional;
 
 /**
  * 
@@ -23,14 +26,22 @@ public class AdminServiceServer implements AdminService {
     /**
      * 
      */
+    @Autowired
     private Repository adminRepository;
 
+    @Autowired
+    private Repository userRepository;
 
     /**
      * @param user
      */
     public void grantAdminPriviliges(User user) {
         // TODO implement here
+
+        Optional<User> userFromRepoitory = userRepository.findById(user.getId());
+
+        if(userFromRepoitory.isPresent()){
+        }
     }
 
     /**
