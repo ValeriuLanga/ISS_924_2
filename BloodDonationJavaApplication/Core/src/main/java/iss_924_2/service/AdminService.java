@@ -1,6 +1,6 @@
-package ISS_924_2.service;
+package iss_924_2.service;
 
-import ISS_924_2.Domain.User;
+import iss_924_2.Domain.User;
 
 public interface AdminService {
 
