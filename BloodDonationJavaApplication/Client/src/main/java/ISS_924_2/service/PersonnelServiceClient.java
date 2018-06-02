@@ -1,7 +1,7 @@
 package iss_924_2.service;
 
-import iss_924_2.Domain.Donor;
-import iss_924_2.Domain.Patient;
+import iss_924_2.domain.Donor;
+import iss_924_2.domain.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class PersonnelServiceClient implements PersonnelService {

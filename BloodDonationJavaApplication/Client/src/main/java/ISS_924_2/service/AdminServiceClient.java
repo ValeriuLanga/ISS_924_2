@@ -1,6 +1,6 @@
 package iss_924_2.service;
 
-import iss_924_2.Domain.User;
+import iss_924_2.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class AdminServiceClient implements AdminService {
