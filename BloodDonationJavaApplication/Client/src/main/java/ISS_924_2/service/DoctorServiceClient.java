@@ -3,7 +3,6 @@ package iss_924_2.service;
 import iss_924_2.domain.Blood;
 import iss_924_2.domain.BloodContainer;
 import iss_924_2.domain.Hospital;
-import javafx.fxml.Initializable;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Set;

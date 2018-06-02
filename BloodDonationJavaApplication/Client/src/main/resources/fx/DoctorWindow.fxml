@@ -52,7 +52,27 @@
             <HBox layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="200.0" />
             <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="200.0">
                <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" text="See Available Blood">
+                     <font>
+                        <Font name="Corbel" size="19.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="200.0" />
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="200.0">
+               <children>
                   <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" text="Check Request Status">
+                     <font>
+                        <Font name="Corbel" size="19.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="200.0" />
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="200.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" text="Check Donators">
                      <font>
                         <Font name="Corbel" size="19.0" />
                      </font>
