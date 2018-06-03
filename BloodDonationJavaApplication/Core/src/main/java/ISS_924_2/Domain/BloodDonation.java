@@ -1,68 +1,24 @@
 package iss_924_2.domain;
 
+import lombok.*;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToOne;
 import java.util.*;
 
-/**
- * 
- */
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
-public class BloodDonation extends Identifier<Integer> {
+@Data
+public class BloodDonation extends BaseEntity<Integer> {
 
-    /**
-     * Default constructor
-     */
-    public BloodDonation() {}
-
-    public BloodDonation(int bloodId, int quantity) {
-
-        this.bloodId = bloodId;
-        this.quantity = quantity;
-        //this.state = state;
-    }
-
-    /**
-     * 
-     */
-    private int bloodId;
-
-    /**
-     * 
-     */
     private int quantity;
 
-    /**
-     *
-     */
-
-
-    /**
-     *
-     */
     private Date expirationDate;
 
-    public int getBloodId() {
-        return bloodId;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public Date getExpirationDate() {
-        return expirationDate;
-    }
-
-    public void setBloodId(int bloodId) {
-        this.bloodId = bloodId;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public void setExpirationDate(Date expirationDate) {
-        this.expirationDate = expirationDate;
-    }
-
+    @OneToOne(fetch = FetchType.EAGER)
+    private Blood blood;
 }

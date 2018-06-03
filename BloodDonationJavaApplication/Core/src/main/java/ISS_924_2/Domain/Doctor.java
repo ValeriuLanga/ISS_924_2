@@ -1,19 +1,23 @@
 package iss_924_2.domain;
 
-import javax.persistence.Entity;
+import lombok.*;
 
-/**
- * 
- */
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
+@Data
 public class Doctor extends User {
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "doctor", fetch = FetchType.EAGER)
+    Set<Analysis> analysis = new HashSet<>();
 
-    /**
-     * Default constructor
-     */
-    public Doctor(String userName, String password, String firstName, String lastName) {
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "doctor", fetch = FetchType.EAGER)
+    Set<Request> request = new HashSet<>();
 
-        super(userName, password, firstName, lastName);
-    }
-
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Hospital hospital;
 }
