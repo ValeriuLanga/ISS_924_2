@@ -10,17 +10,17 @@ import java.io.Serializable;
  * Created by radu.
  */
 @MappedSuperclass
-public class Identifier<ID> implements Serializable {
+public class BaseEntity<ID> implements Serializable {
 
     @Id
     @GeneratedValue
     @Column(unique = true, nullable = false)
     private ID id;
 
-    public Identifier() {
+    public BaseEntity() {
     }
 
-    public Identifier(ID id) {
+    public BaseEntity(ID id) {
         this.id = id;
     }
 
@@ -34,7 +34,7 @@ public class Identifier<ID> implements Serializable {
 
     @Override
     public String toString() {
-        return "Identifier{" +
+        return "BaseEntity{" +
                 "id=" + id +
                 '}';
     }
