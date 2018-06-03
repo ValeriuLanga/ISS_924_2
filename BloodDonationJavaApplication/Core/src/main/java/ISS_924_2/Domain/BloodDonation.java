@@ -34,10 +34,7 @@ public class BloodDonation extends Identifier<Integer> {
     /**
      *
      */
-    //WTFFFFFFF
-//    private enum State {};
-//
-//    private State state;
+
 
     /**
      *
