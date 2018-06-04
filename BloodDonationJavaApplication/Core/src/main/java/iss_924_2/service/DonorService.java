@@ -2,7 +2,6 @@ package iss_924_2.service;
 
 import iss_924_2.domain.Analysis;
 import iss_924_2.domain.Donor;
-import iss_924_2.repository.Repository;
 
 import java.util.Date;
 import java.util.Set;
