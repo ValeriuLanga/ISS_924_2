@@ -4,10 +4,7 @@ import iss_924_2.utils.ContainerType;
 import iss_924_2.utils.RequestStatus;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
@@ -22,9 +19,13 @@ public class Request extends BaseEntity<Integer> {
     @ManyToOne(fetch = FetchType.EAGER)
     private Doctor doctor;
 
+    @Enumerated(EnumType.STRING)
+    @Builder.Default
     private RequestStatus status = RequestStatus.registered;
 
+    @Enumerated(EnumType.STRING)
     private ContainerType containerType;
 
     private int quantity;
+
 }

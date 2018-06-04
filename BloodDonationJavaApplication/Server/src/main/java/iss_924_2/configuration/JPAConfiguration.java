@@ -24,14 +24,13 @@ import javax.sql.DataSource;
 @EnableCaching
 public class JPAConfiguration {
 
-//    private static final String jdbcUrl = "jdbc:postgresql://packy.db.elephantsql.com:5432/jwssuxgy";
-//    private static final String username = "jwssuxgy";
-//    private static final String password = "uIVuc5yLuV4c92v_C-fgqCUDGvXd64v3";
-//    private static final Boolean generateDDL = true;
-    private static final String jdbcUrl = "jdbc:postgresql://localhost:5432/postgres";
-    private static final String username = "postgres";
-    private static final String password = "parola";
-    private static final Boolean generateDDL = true;
+    private String jdbcUrl = "jdbc:postgresql://localhost:5432/postgres";
+
+    private String username = "postgres";
+
+    private String password = "22098";
+
+    private Boolean generateDDL = true;
 
     /**
      * http://www.baeldung.com/hikaricp
@@ -44,7 +43,6 @@ public class JPAConfiguration {
         config.setJdbcUrl(jdbcUrl);
         config.setUsername(username);
         config.setPassword(password);
-        config.setDriverClassName("org.postgresql.Driver");
         config.addDataSourceProperty("cachePrepStmts", "true");
         config.addDataSourceProperty("prepStmtCacheSize", "250");
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
@@ -83,6 +81,5 @@ public class JPAConfiguration {
     public HibernateExceptionTranslator hibernateExceptionTranslator() {
         return new HibernateExceptionTranslator();
     }
-
 
 }
