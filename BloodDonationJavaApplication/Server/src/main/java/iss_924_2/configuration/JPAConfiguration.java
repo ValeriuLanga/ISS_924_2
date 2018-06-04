@@ -1,7 +1,6 @@
 package iss_924_2.configuration;
 
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
+import org.postgresql.ds.PGPoolingDataSource;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,29 +23,20 @@ import javax.sql.DataSource;
 @EnableCaching
 public class JPAConfiguration {
 
-    private String jdbcUrl = "jdbc:postgresql://localhost:5432/postgres";
+    private final String jdbcUrl = "jdbc:postgresql://packy.db.elephantsql.com:5432/jwssuxgy";
+    private final String username = "jwssuxgy";
+    private final String password = "uIVuc5yLuV4c92v_C-fgqCUDGvXd64v3";
+    private final Boolean generateDDL = true;
 
-    private String username = "postgres";
-
-    private String password = "22098";
-
-    private Boolean generateDDL = true;
-
-    /**
-     * http://www.baeldung.com/hikaricp
-     *
-     * @return
-     */
     @Bean
     public DataSource dataSource() {
-        HikariConfig config = new HikariConfig();
-        config.setJdbcUrl(jdbcUrl);
-        config.setUsername(username);
-        config.setPassword(password);
-        config.addDataSourceProperty("cachePrepStmts", "true");
-        config.addDataSourceProperty("prepStmtCacheSize", "250");
-        config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
-        HikariDataSource dataSource = new HikariDataSource(config);
+        PGPoolingDataSource dataSource = new PGPoolingDataSource();
+        dataSource.setUrl(jdbcUrl);
+        dataSource.setDatabaseName("jwssuxgy");
+        dataSource.setUser(username);
+        dataSource.setPassword(password);
+        dataSource.setMaxConnections(8);
+
         return dataSource;
     }
 
