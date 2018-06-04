@@ -1,69 +1,26 @@
 package iss_924_2.domain;
 
+import lombok.*;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import java.util.*;
+import javax.persistence.Table;
 
-/**
- * 
- */
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
-public class User extends Identifier<Integer> {
+@Table(name = "users")
+@Data
+public class User extends BaseEntity<Integer> {
 
-    /**
-     * Default constructor
-     */
-    public User() {
-    }
+    @Column(unique = true)
+    protected String userName;
 
-    /**
-     * 
-     */
-    private String userName;
+    protected String password;
 
-    /**
-     * 
-     */
-    private String password;
+    protected String firstName;
 
-    /**
-     * 
-     */
-    private String firstName;
-
-    /**
-     * 
-     */
-    private String lastName;
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+    protected String lastName;
 }

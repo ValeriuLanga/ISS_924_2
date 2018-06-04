@@ -5,10 +5,6 @@ import iss_924_2.services.DoctorServiceServer;
 import iss_924_2.services.DonorServiceServer;
 import iss_924_2.services.PersonnelServiceServer;
 import iss_924_2.domain.User;
-import iss_924_2.services.AdminServiceServer;
-import iss_924_2.services.DoctorServiceServer;
-import iss_924_2.services.DonorServiceServer;
-import iss_924_2.services.PersonnelServiceServer;
 
 /**
  * 

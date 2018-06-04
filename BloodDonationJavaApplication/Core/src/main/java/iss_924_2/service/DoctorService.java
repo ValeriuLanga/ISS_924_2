@@ -2,9 +2,7 @@ package iss_924_2.service;
 
 import iss_924_2.domain.Blood;
 import iss_924_2.domain.BloodContainer;
-import iss_924_2.domain.Doctor;
 import iss_924_2.domain.Hospital;
-import iss_924_2.repository.Repository;
 
 import java.util.Set;
 

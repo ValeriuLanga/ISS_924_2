@@ -1,43 +1,21 @@
 package iss_924_2.domain;
 
-import javax.persistence.Entity;
+import lombok.*;
 
-/**
- * 
- */
+import javax.persistence.*;
+
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
-public class Patient extends Identifier<Integer> {
+@Data
+public class Patient extends BaseEntity<Integer> {
 
-    /**
-     * Default constructor
-     */
-    public Patient() {
-    }
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Blood blood;
 
-    /**
-     * 
-     */
-    public Blood Blood;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Hospital hospital;
 
-    /**
-     * 
-     */
-    public Hospital Hospital;
-
-
-    public Blood getBlood() {
-        return Blood;
-    }
-
-    public Hospital getHospital() {
-        return Hospital;
-    }
-
-    public void setBlood(Blood blood) {
-        Blood = blood;
-    }
-
-    public void setHospital(Hospital hospital) {
-        Hospital = hospital;
-    }
 }

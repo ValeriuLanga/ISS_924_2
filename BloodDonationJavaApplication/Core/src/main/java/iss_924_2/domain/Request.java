@@ -1,87 +1,31 @@
 package iss_924_2.domain;
 
-import javax.persistence.Entity;
+import iss_924_2.utils.ContainerType;
+import iss_924_2.utils.RequestStatus;
+import lombok.*;
 
-/**
- * 
- */
+import javax.persistence.*;
+
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
-public class Request extends Identifier<Integer> {
+@Data
+public class Request extends BaseEntity<Integer> {
 
-    /**
-     * Default constructor
-     */
-    public Request() {
-    }
-
-    /**
-     * 
-     */
-    private int requestId;
-
-    /**
-     * 
-     */
     private int urgencyLevel;
 
-    /**
-     * 
-     */
+    @ManyToOne(fetch = FetchType.EAGER)
     private Doctor doctor;
 
-    /**
-     * 
-     */
-    private Hospital locationWhereBloodIsNeeded;
+    @Enumerated(EnumType.STRING)
+    @Builder.Default
+    private RequestStatus status = RequestStatus.registered;
 
-    /**
-     *
-     */
-    private enum status {};
+    @Enumerated(EnumType.STRING)
+    private ContainerType containerType;
 
-    /**
-     *
-     */
-    private BloodContainer bloodContainer;
-
-    public int getRequestId() {
-        return requestId;
-    }
-
-    public int getUrgencyLevel() {
-        return urgencyLevel;
-    }
-
-    public Doctor getDoctor() {
-        return doctor;
-    }
-
-    public Hospital getLocationWhereBloodIsNeeded() {
-        return locationWhereBloodIsNeeded;
-    }
-
-    public BloodContainer getBloodContainer() {
-        return bloodContainer;
-    }
-
-    public void setRequestId(int requestId) {
-        this.requestId = requestId;
-    }
-
-    public void setUrgencyLevel(int urgencyLevel) {
-        this.urgencyLevel = urgencyLevel;
-    }
-
-    public void setDoctor(Doctor doctor) {
-        this.doctor = doctor;
-    }
-
-    public void setLocationWhereBloodIsNeeded(Hospital locationWhereBloodIsNeeded) {
-        this.locationWhereBloodIsNeeded = locationWhereBloodIsNeeded;
-    }
-
-    public void setBloodContainer(BloodContainer bloodContainer) {
-        this.bloodContainer = bloodContainer;
-    }
+    private int quantity;
 
 }

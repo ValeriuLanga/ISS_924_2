@@ -1,57 +1,35 @@
 package iss_924_2.domain;
 
-import javax.persistence.Entity;
+import lombok.*;
+
+import javax.persistence.*;
 import java.util.*;
 
 /**
  * 
  */
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-public class Hospital extends Identifier<Integer> {
+@Data
+public class Hospital extends BaseEntity<Integer> {
 
-    /**
-     * Default constructor
-     */
-    public Hospital() {
-    }
-
-    /**
-     * 
-     */
     private String name;
 
-    /**
-     * 
-     */
-    private Set<BloodContainer> bloodStock;
+    @OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @Builder.Default
+    private Set<Doctor> doctors = new HashSet<>();
 
-    /**
-     * 
-     */
+    @OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @Builder.Default
+    private Set<Patient> patients = new HashSet<>();
+
+    @OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @Builder.Default
+    private Set<BloodContainer> bloodContainers = new HashSet<>();
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Address address;
 
-
-    public String getName() {
-        return name;
-    }
-
-    public Set<BloodContainer> getBloodStock() {
-        return bloodStock;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setBloodStock(Set<BloodContainer> bloodStock) {
-        this.bloodStock = bloodStock;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
 }

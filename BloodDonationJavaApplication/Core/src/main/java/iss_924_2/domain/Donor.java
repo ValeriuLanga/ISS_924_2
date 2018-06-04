@@ -1,56 +1,27 @@
 package iss_924_2.domain;
 
-import javax.persistence.Entity;
+import lombok.*;
+
+import javax.persistence.*;
 import java.util.*;
 
-/**
- * 
- */
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
+@Data
 public class Donor extends User {
 
-    /**
-     * Default constructor
-     */
-    public Donor() {
-    }
+    private String dateOfBirth;
 
-    /**
-     * 
-     */
-    private Date dateOfBirth;
-
-    /**
-     * 
-     */
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Address address;
 
-    /**
-     * 
-     */
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Address actualAddress;
 
-    public Date getDateOfBirth() {
-        return dateOfBirth;
-    }
+    @OneToMany(mappedBy = "donor", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @Builder.Default
+    private Set<Donation> donation = new HashSet<>();
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public Address getActualAddress() {
-        return actualAddress;
-    }
-
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public void setActualAddress(Address actualAddress) {
-        this.actualAddress = actualAddress;
-    }
 }

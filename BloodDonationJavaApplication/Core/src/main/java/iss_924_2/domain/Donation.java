@@ -1,57 +1,31 @@
 package iss_924_2.domain;
 
-import javax.persistence.Entity;
+import iss_924_2.utils.Status;
+import lombok.*;
 
+import javax.persistence.*;
 
-/**
- * 
- */
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
-public class Donation extends Identifier<Integer> {
+@Data
+public class Donation extends BaseEntity<Integer> {
 
-    /**
-     * Default constructor
-     */
-    public Donation() {
-    }
+    private int quantity;
 
-    /**
-     * 
-     */
-    private int donationId;
+    private String expirationDate;
 
-    /**
-     * 
-     */
-    private BloodDonation blood;
+    private String donationDate;
 
-    /**
-     * 
-     */
+    @Enumerated(EnumType.STRING)
+    private Status status;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Blood blood;
+
+    @ManyToOne(fetch = FetchType.EAGER)
     private Donor donor;
 
-
-    public int getDonationId() {
-        return donationId;
-    }
-
-    public BloodDonation getBlood() {
-        return blood;
-    }
-
-    public Donor getDonor() {
-        return donor;
-    }
-
-    public void setDonationId(int donationId) {
-        this.donationId = donationId;
-    }
-
-    public void setBlood(BloodDonation blood) {
-        this.blood = blood;
-    }
-
-    public void setDonor(Donor donor) {
-        this.donor = donor;
-    }
 }
