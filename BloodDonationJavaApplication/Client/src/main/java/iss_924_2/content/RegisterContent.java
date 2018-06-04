@@ -1,4 +1,4 @@
-package iss_924_2.controller;
+package iss_924_2.content;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;

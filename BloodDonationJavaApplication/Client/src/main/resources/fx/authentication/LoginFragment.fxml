@@ -11,7 +11,7 @@
 
 <fx:root minHeight="400.0" minWidth="300.0" prefHeight="400.0" prefWidth="300.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <VBox alignment="TOP_CENTER" minHeight="500.0" minWidth="300.0" prefHeight="500.0" prefWidth="300.0">
+        <VBox alignment="TOP_CENTER" minHeight="400.0" minWidth="300.0" prefHeight="400.0" prefWidth="300.0">
             <children>
                 <Label alignment="CENTER" minHeight="40.0" minWidth="-Infinity" prefHeight="40.0" text="LOGIN" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                     <font>
@@ -25,15 +25,20 @@
                     </VBox.margin>
                     <children>
                         <Label minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="80.0" text="Username: " />
-                        <TextField fx:id="textfield_login" minHeight="25.0" minWidth="40.0" prefHeight="25.0" />
+                        <TextField fx:id="userNameField" minHeight="25.0" minWidth="40.0" prefHeight="25.0" />
                     </children>
                 </HBox>
                 <HBox alignment="CENTER" layoutX="10.0" layoutY="116.0" prefHeight="40.0" prefWidth="200.0">
                     <children>
                         <Label minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="80.0" text="Password: " />
-                        <PasswordField fx:id="textfield_password" minHeight="25.0" minWidth="40.0" prefHeight="25.0" />
+                        <PasswordField fx:id="passwordField" minHeight="25.0" minWidth="40.0" prefHeight="25.0" />
                     </children>
                 </HBox>
+            <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="errorLabel" />
+               </children>
+            </HBox>
             </children>
         </VBox>
     </children>
