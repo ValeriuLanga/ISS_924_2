@@ -19,4 +19,5 @@ public class Address extends BaseEntity<Integer> {
     private String city;
 
     private String country;
+
 }

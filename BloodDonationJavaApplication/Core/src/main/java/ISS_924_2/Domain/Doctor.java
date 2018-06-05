@@ -12,12 +12,16 @@ import java.util.Set;
 @Entity
 @Data
 public class Doctor extends User {
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "doctor", fetch = FetchType.EAGER)
-    Set<Analysis> analysis = new HashSet<>();
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "doctor", fetch = FetchType.EAGER)
-    Set<Request> request = new HashSet<>();
+    @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @Builder.Default
+    private Set<Analysis> analysis = new HashSet<>();
+
+    @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @Builder.Default
+    private Set<Request> request = new HashSet<>();
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Hospital hospital;
+
 }

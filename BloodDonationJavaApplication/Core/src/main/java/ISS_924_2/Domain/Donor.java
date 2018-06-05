@@ -12,14 +12,16 @@ import java.util.*;
 @Data
 public class Donor extends User {
 
-    private Date dateOfBirth;
+    private String dateOfBirth;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Address address;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Address actualAddress;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "donor", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "donor", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @Builder.Default
     private Set<Donation> donation = new HashSet<>();
+
 }

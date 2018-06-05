@@ -1,5 +1,6 @@
 package iss_924_2.domain;
 
+import iss_924_2.utils.Status;
 import lombok.*;
 
 import javax.persistence.*;
@@ -12,9 +13,19 @@ import javax.persistence.*;
 @Data
 public class Donation extends BaseEntity<Integer> {
 
-    @OneToOne(fetch = FetchType.EAGER)
-    private BloodDonation bloodDonation;
+    private int quantity;
+
+    private String expirationDate;
+
+    private String donationDate;
+
+    @Enumerated(EnumType.STRING)
+    private Status status;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Blood blood;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Donor donor;
+
 }
