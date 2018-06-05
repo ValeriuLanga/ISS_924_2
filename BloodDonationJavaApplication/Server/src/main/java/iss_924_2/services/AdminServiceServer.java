@@ -36,11 +36,10 @@ public class AdminServiceServer implements AdminService {
      * @param user
      */
     public void grantAdminPriviliges(User user) {
-        // TODO implement here
-
         Optional<User> userFromRepoitory = userRepository.findById(user.getId());
 
         if(userFromRepoitory.isPresent()){
+
         }
     }
 
