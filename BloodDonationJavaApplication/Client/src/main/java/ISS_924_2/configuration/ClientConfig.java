@@ -2,6 +2,10 @@ package iss_924_2.configuration;
 
 import iss_924_2.console.ConsoleUi;
 import iss_924_2.service.*;
+import iss_924_2.service.AdminServiceClient;
+import iss_924_2.service.DoctorServiceClient;
+import iss_924_2.service.DonorServiceClient;
+import iss_924_2.service.PersonnelServiceClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.remoting.rmi.RmiProxyFactoryBean;
