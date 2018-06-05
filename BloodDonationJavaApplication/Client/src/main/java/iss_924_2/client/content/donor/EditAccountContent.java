@@ -74,7 +74,7 @@ public class EditAccountContent extends AnchorPane {
     private Label changeResidenceInfo;
 
     public EditAccountContent() {
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../resources/fx/donoractions/EditAccount.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../../resources/fx/donoractions/EditAccount.fxml"));
 
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);

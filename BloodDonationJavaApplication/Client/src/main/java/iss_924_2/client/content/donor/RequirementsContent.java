@@ -11,7 +11,7 @@ public class RequirementsContent extends AnchorPane {
     private TextArea textArea;
 
     public RequirementsContent() {
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../resources/fx/donoractions/Requirements.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../../resources/fx/donoractions/Requirements.fxml"));
 
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);

@@ -17,7 +17,7 @@ public class LoginContent extends AnchorPane {
     private Label errorLabel;
 
     public LoginContent() {
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../resources/fx/authentication/LoginFragment.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../../resources/fx/authentication/LoginFragment.fxml"));
 
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);

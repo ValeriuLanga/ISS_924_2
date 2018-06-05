@@ -38,7 +38,7 @@ public class DonationFormContent extends AnchorPane {
     private Button submitButton;
 
     public DonationFormContent() {
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../resources/fx/donoractions/DonationForm.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../../resources/fx/donoractions/DonationForm.fxml"));
 
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);

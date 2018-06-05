@@ -18,7 +18,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
-@EnableJpaRepositories({"iss_924_2.repository"})
+@EnableJpaRepositories({"iss_924_2.server.repository"})
 @EnableTransactionManagement
 @EnableCaching
 public class JPAConfiguration {
@@ -49,7 +49,7 @@ public class JPAConfiguration {
 
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
-        factory.setPackagesToScan("iss_924_2.domain");
+        factory.setPackagesToScan("iss_924_2.core.domain");
         factory.setDataSource(dataSource());
         factory.afterPropertiesSet();
         return factory.getObject();

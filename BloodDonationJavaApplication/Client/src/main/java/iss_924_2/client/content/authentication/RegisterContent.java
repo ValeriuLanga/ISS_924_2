@@ -39,7 +39,7 @@ public class RegisterContent extends AnchorPane {
     private TextField actualAddressCountry;
 
     public RegisterContent() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../../../resources/fx/authentication/RegisterFragment.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../../../../resources/fx/authentication/RegisterFragment.fxml"));
 
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);

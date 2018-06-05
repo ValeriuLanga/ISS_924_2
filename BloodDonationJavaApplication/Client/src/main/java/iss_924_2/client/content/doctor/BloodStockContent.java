@@ -11,7 +11,7 @@ public class BloodStockContent extends AnchorPane {
     private ListView bloodStockList;
 
     public BloodStockContent() {
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../resources/fx/doctoractions/BloodStock.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../../resources/fx/doctoractions/BloodStock.fxml"));
 
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);

@@ -2,7 +2,6 @@ package iss_924_2.server;
 
 import iss_924_2.core.domain.Address;
 import iss_924_2.core.domain.Donor;
-import iss_924_2.domain.*;
 import iss_924_2.server.repository.DonorRepository;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -10,7 +9,7 @@ public class ServerApp {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context =
-                new AnnotationConfigApplicationContext("iss_924_2.configuration");
+                new AnnotationConfigApplicationContext("iss_924_2.server.configuration");
 
         Address address1 = Address.builder().city("Cluj-Napoca").country("Romania").street("Aurel Vlaicu").number("182A").build();
         Address address2 = Address.builder().city("Bucuresti").country("Romania").street("Vasile Conta").number("44C").build();
@@ -26,7 +25,7 @@ public class ServerApp {
         d.setDateOfBirth("03-06-1992");
 
         DonorRepository donorRepository = context.getBean(DonorRepository.class);
-        donorRepository.save(d);
+        donorRepository.findAll().forEach(System.out::println);
 
         System.out.println("bye - server");
     }

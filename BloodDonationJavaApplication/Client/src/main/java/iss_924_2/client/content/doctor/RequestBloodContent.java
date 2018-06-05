@@ -32,7 +32,7 @@ public class RequestBloodContent extends AnchorPane {
     private ToggleGroup toggleGroup;
 
     public RequestBloodContent() {
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../resources/fx/doctoractions/RequestBlood.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../../resources/fx/doctoractions/RequestBlood.fxml"));
 
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);

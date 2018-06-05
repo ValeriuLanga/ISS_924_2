@@ -11,7 +11,7 @@ public class ViewHistoryContent extends AnchorPane {
     private ListView listView;
 
     public ViewHistoryContent() {
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../resources/fx/donoractions/ViewHistory.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../../resources/fx/donoractions/ViewHistory.fxml"));
 
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);

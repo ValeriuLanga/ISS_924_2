@@ -21,19 +21,19 @@ public class ClientAppFX extends Application {
     private DoctorController doctorController;
 
     private FXMLLoader setupAuthenticationScreen() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../resources/fx/AuthenticationWindow.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../../resources/fx/AuthenticationWindow.fxml"));
         authenticationController = fxmlLoader.getController();
         return fxmlLoader;
     }
 
     private FXMLLoader setupDonorScreen() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../resources/fx/DonorWindow.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../../resources/fx/DonorWindow.fxml"));
         donorController = fxmlLoader.getController();
         return fxmlLoader;
     }
 
     private FXMLLoader setupDoctorScreen() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../resources/fx/DoctorWindow.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../../resources/fx/DoctorWindow.fxml"));
         doctorController = fxmlLoader.getController();
         return fxmlLoader;
     }

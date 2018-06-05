@@ -11,7 +11,7 @@ public class CheckStatusContent extends AnchorPane {
     private ListView statusList;
 
     public CheckStatusContent() {
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../resources/fx/doctoractions/CheckStatus.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../../resources/fx/doctoractions/CheckStatus.fxml"));
 
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
