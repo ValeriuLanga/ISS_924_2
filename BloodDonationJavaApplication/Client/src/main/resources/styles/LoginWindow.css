@@ -1,0 +1,4 @@
+.anchor {
+    -fx-background-image:url('../images/LoginWindowBackground.png');
+    -fx-background-size: cover;
+}

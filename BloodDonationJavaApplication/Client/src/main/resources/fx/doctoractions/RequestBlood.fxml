@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root prefHeight="700.0" prefWidth="700.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="600.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="100.0">
+                     <children>
+                        <Label text="Request Blood">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label text="Complete the following form to request the blood type you need.">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="260.0" prefHeight="100.0" prefWidth="600.0">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="100.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label text="Blood group: ">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="bloodGroupField" prefWidth="40.0" />
+                           </children>
+                        </HBox>
+                        <Label text="(Fill with A, B, AB, or O)" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="210.0" prefHeight="100.0" prefWidth="600.0">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="100.0">
+                     <children>
+                        <Label text="Urgency level: ">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <RadioButton fx:id="highUrgency" mnemonicParsing="false" text="High" />
+                              <RadioButton fx:id="mediumUrgency" mnemonicParsing="false" text="Medium">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="lowUrgency" mnemonicParsing="false" text="Low">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="100.0">
+                     <children>
+                        <Label text="Location: ">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="50.0" text="(The location where the blood should be requested)" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="30.0">
+                           <children>
+                              <Label prefHeight="25.0" text="Street: ">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="locationStreet" prefHeight="25.0" />
+                              <Label layoutX="10.0" layoutY="13.0" prefHeight="25.0" text="Number: ">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="locationNumber" layoutX="54.0" layoutY="13.0" prefHeight="25.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="64.0" prefHeight="30.0">
+                           <children>
+                              <Label prefHeight="25.0" text="City: ">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="locationCity" prefHeight="25.0" />
+                              <Label layoutX="10.0" layoutY="13.0" prefHeight="25.0" text="Country: ">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="locationCountry" layoutX="54.0" layoutY="13.0" prefHeight="25.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="600.0">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <children>
+                  <Button fx:id="requestButton" mnemonicParsing="false" text="Request" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="60.0" prefHeight="100.0" prefWidth="600.0">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+         </children></VBox>
+   </children>
+</fx:root>
