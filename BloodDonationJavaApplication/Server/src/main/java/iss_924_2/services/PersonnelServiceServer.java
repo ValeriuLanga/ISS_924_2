@@ -27,7 +27,7 @@ public class PersonnelServiceServer implements iss_924_2.service.PersonnelServic
      */
     private Repository personnelRepository;
 
-
+    private Repository donorRepository;
     /**
      * 
      */
@@ -40,6 +40,7 @@ public class PersonnelServiceServer implements iss_924_2.service.PersonnelServic
      */
     public void collectData() {
         // TODO implement here
+
     }
 
 
