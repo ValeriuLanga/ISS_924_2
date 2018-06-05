@@ -12,9 +12,10 @@ import javax.persistence.*;
 @Data
 public class Patient extends BaseEntity<Integer> {
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Blood blood;
 
-    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Hospital hospital;
+
 }

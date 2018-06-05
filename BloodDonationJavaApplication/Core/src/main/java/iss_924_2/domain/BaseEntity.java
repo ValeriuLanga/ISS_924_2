@@ -38,4 +38,5 @@ public class BaseEntity<ID> implements Serializable {
                 "id=" + id +
                 '}';
     }
+
 }
