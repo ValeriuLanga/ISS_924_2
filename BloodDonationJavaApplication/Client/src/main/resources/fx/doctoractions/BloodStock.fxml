@@ -12,20 +12,22 @@
    <children>
       <VBox prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
          <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="600.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
                <padding>
                   <Insets left="20.0" />
                </padding>
                <children>
-                  <Label text="Check Requests Status">
+                  <Label text="Available Blood Stocks">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
                </children>
             </HBox>
-            <ListView fx:id="statusList" prefHeight="500.0" prefWidth="600.0" />
-         </children>
-      </VBox>
+            <ListView fx:id="bloodStockList" prefHeight="500.0" prefWidth="600.0" />
+         </children></VBox>
    </children>
 </fx:root>

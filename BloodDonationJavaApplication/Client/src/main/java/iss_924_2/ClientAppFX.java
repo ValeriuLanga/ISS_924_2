@@ -1,8 +1,8 @@
 package iss_924_2;
 
 import iss_924_2.controller.AuthenticationController;
+import iss_924_2.controller.DoctorController;
 import iss_924_2.controller.DonorController;
-import iss_924_2.service.DonorService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,6 +18,7 @@ public class ClientAppFX extends Application {
 
     private AuthenticationController authenticationController;
     private DonorController donorController;
+    private DoctorController doctorController;
 
     private FXMLLoader setupAuthenticationScreen() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../resources/fx/AuthenticationWindow.fxml"));
@@ -28,6 +29,12 @@ public class ClientAppFX extends Application {
     private FXMLLoader setupDonorScreen() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../resources/fx/DonorWindow.fxml"));
         donorController = fxmlLoader.getController();
+        return fxmlLoader;
+    }
+
+    private FXMLLoader setupDoctorScreen() {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../resources/fx/DoctorWindow.fxml"));
+        doctorController = fxmlLoader.getController();
         return fxmlLoader;
     }
 
@@ -56,11 +63,22 @@ public class ClientAppFX extends Application {
         }
     }
 
+    public void changeScreenToDoctor() {
+        try {
+            root = this.setupDoctorScreen().load();
+            Scene scene =  new Scene(root);
+            this.mainStage.setScene(scene);
+
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+    }
+
     @Override
     public void start(Stage mainStage) {
         this.mainStage = mainStage;
         this.mainStage.setTitle("Blood Donation");
-        changeScreenToAuthentication();
+        changeScreenToDoctor();
         this.mainStage.show();
     }
 

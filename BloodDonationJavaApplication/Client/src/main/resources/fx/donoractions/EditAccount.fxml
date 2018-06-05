@@ -157,7 +157,7 @@
                </padding>
                <children>
                   <Button fx:id="changeAddressSwitch" mnemonicParsing="false" prefWidth="111.0" text="Change address" />
-                  <HBox fx:id="changeAddressHbox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="450.0" visible="false">
+                  <HBox fx:id="changeAddressHbox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="450.0">
                      <children>
                         <VBox prefHeight="100.0" prefWidth="300.0">
                            <children>

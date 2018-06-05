@@ -4,11 +4,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 public class DonationFormContent extends AnchorPane {
 
+    @FXML
+    private Label eligibilityLabel;
     @FXML
     private TextField donationFormFirstName;
     @FXML
@@ -47,6 +50,7 @@ public class DonationFormContent extends AnchorPane {
             e.printStackTrace();
         }
 
+        eligibilityLabel = (Label) this.lookup("#eligibilityLabel");
         donationFormFirstName = (TextField) this.lookup("#donationFormFirstName");
         donationFormLastName = (TextField) this.lookup("#donationFormLastName");
         donationFormDateOfBirth = (DatePicker) this.lookup("#donationFormDateOfBirth");
