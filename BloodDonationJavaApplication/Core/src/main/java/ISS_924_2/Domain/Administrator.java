@@ -1,18 +1,13 @@
 package iss_924_2.domain;
 
+import lombok.*;
+
 import javax.persistence.Entity;
 
-/**
- * 
- */
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
 @Entity
-public class Administrator extends iss_924_2.domain.User {
-
-    /**
-     * Default constructor
-     */
-    public Administrator(String username, String password, String firstName, String lastName) {
-        super(username, password, firstName, lastName);
-    }
+@Data
+public class Administrator extends User {
 
 }

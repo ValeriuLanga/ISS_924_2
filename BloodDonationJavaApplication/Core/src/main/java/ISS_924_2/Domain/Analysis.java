@@ -1,91 +1,23 @@
 package iss_924_2.domain;
 
-import javax.persistence.Entity;
+import lombok.*;
 
-/**
- * 
- */
+import javax.persistence.*;
+
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
-public class Analysis extends Identifier<Integer> {
+@Data
+public class Analysis extends BaseEntity<Integer> {
 
-    /**
-     * Default constructor
-     */
-
-    /**
-     * 
-     */
-    private int analysisId;
-
-    /**
-     * 
-     */
+    @ManyToOne(fetch = FetchType.EAGER)
     private Doctor doctor;
 
-    /**
-     * 
-     */
     private boolean validity;
 
-    /**
-     * 
-     */
-    private BloodDonation bloodSample;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Donation donation;
 
-    /**
-     * 
-     */
-    private Blood blood;
-
-    public Analysis() {
-    }
-
-    public Analysis(int analysisId, Doctor doctor, boolean validity, BloodDonation bloodSample){
-
-        this.analysisId = analysisId;
-        this.doctor = doctor;
-        this.validity = validity;
-        this.bloodSample = bloodSample;
-    }
-
-
-    public int getAnalysisId() {
-        return analysisId;
-    }
-
-    public Doctor getDoctor() {
-        return doctor;
-    }
-
-    public boolean isValidity() {
-        return validity;
-    }
-
-    public BloodDonation getBloodSample() {
-        return bloodSample;
-    }
-
-    public Blood getBlood() {
-        return blood;
-    }
-
-    public void setAnalysisId(int analysisId) {
-        this.analysisId = analysisId;
-    }
-
-    public void setDoctor(Doctor doctor) {
-        this.doctor = doctor;
-    }
-
-    public void setValidity(boolean validity) {
-        this.validity = validity;
-    }
-
-    public void setBloodSample(BloodDonation bloodSample) {
-        this.bloodSample = bloodSample;
-    }
-
-    public void setBlood(Blood blood) {
-        this.blood = blood;
-    }
 }
