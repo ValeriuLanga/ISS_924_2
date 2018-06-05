@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iss_924_2.controller.DonorController">
    <left>
       <Pane prefHeight="200.0" prefWidth="300.0" BorderPane.alignment="CENTER">
          <children>
@@ -26,7 +25,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="42.0" prefWidth="200.0">
                      <children>
-                        <Label text="Name">
+                        <Label fx:id="userNameLabel" text="Name">
                            <font>
                               <Font name="Algerian" size="22.0" />
                            </font>
@@ -45,7 +44,7 @@
                   <HBox prefHeight="42.0" prefWidth="200.0" />
                   <HBox alignment="CENTER" prefHeight="42.0" prefWidth="200.0">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" text="Edit Account Details">
+                        <Button fx:id="editAccountDetailsButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" text="Edit Account Details">
                            <font>
                               <Font name="Corbel" size="19.0" />
                            </font>
@@ -55,7 +54,7 @@
                   <HBox layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="200.0" />
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="200.0">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" text="Fill Donation Form">
+                        <Button fx:id="fillDonationFormButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" text="Fill Donation Form">
                            <font>
                               <Font name="Corbel" size="19.0" />
                            </font>
@@ -65,7 +64,7 @@
                   <HBox layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="200.0" />
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="200.0">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" text="View History">
+                        <Button fx:id="viewHistoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" text="View History">
                            <font>
                               <Font name="Corbel" size="19.0" />
                            </font>
@@ -73,6 +72,15 @@
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="200.0" />
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="346.0" prefHeight="42.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="requirementsButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" text="Requirements">
+                           <font>
+                              <Font name="Corbel" size="19.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
          </children>
