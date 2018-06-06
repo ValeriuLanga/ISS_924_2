@@ -6,9 +6,7 @@ import iss_924_2.core.domain.Donor;
 import iss_924_2.core.domain.User;
 import iss_924_2.server.repository.Repository;
 import iss_924_2.core.service.DonorService;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.*;
 

@@ -4,6 +4,7 @@ import iss_924_2.core.domain.Analysis;
 import iss_924_2.core.domain.Donor;
 import iss_924_2.core.service.DonorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import java.util.Set;
 public class DonorServiceClient implements DonorService {
 
     @Autowired
+    @Qualifier("DonorServiceClient")
     DonorService donorService;
 
 //    @Override

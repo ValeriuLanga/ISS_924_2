@@ -1,14 +1,8 @@
 package iss_924_2.client.configuration;
 
 import iss_924_2.client.console.ConsoleUi;
-import iss_924_2.client.service.AdminServiceClient;
-import iss_924_2.client.service.DoctorServiceClient;
-import iss_924_2.client.service.DonorServiceClient;
-import iss_924_2.client.service.PersonnelServiceClient;
-import iss_924_2.core.service.AdminService;
-import iss_924_2.core.service.DoctorService;
-import iss_924_2.core.service.DonorService;
-import iss_924_2.core.service.PersonnelService;
+import iss_924_2.client.service.*;
+import iss_924_2.core.service.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -53,11 +47,24 @@ public class ClientConfig {
         return new DonorServiceClient();
     }
 
-    @Bean
+    @Bean(name = "DonorServiceClient")
     RmiProxyFactoryBean rmiProxyFactoryBeanDonor(){
         RmiProxyFactoryBean proxy=new RmiProxyFactoryBean();
         proxy.setServiceInterface(DonorService.class);
         proxy.setServiceUrl("rmi://localhost:1099/DonorService");
+        return proxy;
+    }
+
+    @Bean
+    LoginServiceClient provideLoginServiceClient() {
+        return new LoginServiceClient();
+    }
+
+    @Bean(name = "LoginServiceClient")
+    RmiProxyFactoryBean rmiProxyFactoryBeanLogin() {
+        RmiProxyFactoryBean proxy = new RmiProxyFactoryBean();
+        proxy.setServiceInterface(LoginService.class);
+        proxy.setServiceUrl("rmi://localhost:1099/LoginService");
         return proxy;
     }
 

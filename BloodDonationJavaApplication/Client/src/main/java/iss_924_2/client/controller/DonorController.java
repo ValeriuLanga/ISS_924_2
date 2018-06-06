@@ -47,7 +47,8 @@ public class DonorController implements Initializable {
     }
 
     private void changeContentToEditAccount() {
-        editAccountContent = new EditAccountContent(donorServiceClient);
+        editAccountContent = new EditAccountContent();
+        editAccountContent.setChangeAddressCity(donorServiceClient.getAllDonors().get(0).getAddress().getCity());
         mainPane.setCenter(editAccountContent);
     }
 
