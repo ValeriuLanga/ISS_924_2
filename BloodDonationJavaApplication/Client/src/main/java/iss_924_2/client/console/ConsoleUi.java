@@ -1,9 +1,12 @@
 package iss_924_2.client.console;
 
+import iss_924_2.core.domain.Donor;
 import iss_924_2.core.service.AdminService;
 import iss_924_2.core.service.DoctorService;
 import iss_924_2.core.service.DonorService;
 import iss_924_2.core.service.PersonnelService;
+
+import java.util.List;
 
 public class ConsoleUi {
 
@@ -12,16 +15,17 @@ public class ConsoleUi {
     private DonorService donorService;
     private PersonnelService personnelService;
 
-    public ConsoleUi(AdminService adminService, DoctorService doctorService, DonorService donorService, PersonnelService personnelService) {
-        this.adminService = adminService;
-        this.doctorService = doctorService;
+    public ConsoleUi(DonorService donorService) {
         this.donorService = donorService;
-        this.personnelService = personnelService;
+
+    }
+
+    public List<Donor> getAll(){
+        return donorService.getAllDonors();
     }
 
     public void start(){
-        while (true){
-        }
+        donorService.getAllDonors().forEach(System.out::println);
     }
 
 }

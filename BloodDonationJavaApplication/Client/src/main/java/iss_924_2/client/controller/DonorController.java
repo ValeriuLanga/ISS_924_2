@@ -4,16 +4,20 @@ import iss_924_2.client.content.donor.DonationFormContent;
 import iss_924_2.client.content.donor.EditAccountContent;
 import iss_924_2.client.content.donor.RequirementsContent;
 import iss_924_2.client.content.donor.ViewHistoryContent;
+import iss_924_2.client.service.DonorServiceClient;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+import org.aspectj.lang.annotation.Before;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class DonorController implements Initializable {
+
+    DonorServiceClient donorServiceClient;
 
     @FXML
     private BorderPane mainPane;
@@ -33,13 +37,17 @@ public class DonorController implements Initializable {
     private RequirementsContent requirementsContent;
     private ViewHistoryContent viewHistoryContent;
 
+    public DonorController(DonorServiceClient donorServiceClient) {
+        this.donorServiceClient = donorServiceClient;
+    }
+
     private void changeContentToRequirements() {
         requirementsContent = new RequirementsContent();
         mainPane.setCenter(requirementsContent);
     }
 
     private void changeContentToEditAccount() {
-        editAccountContent = new EditAccountContent();
+        editAccountContent = new EditAccountContent(donorServiceClient);
         mainPane.setCenter(editAccountContent);
     }
 
@@ -64,5 +72,9 @@ public class DonorController implements Initializable {
         viewHistoryButton.setOnAction(event -> changeContentToViewHistory());
 
         requirementsButton.setOnAction(event -> changeContentToRequirements());
+    }
+
+    public void setDonorService(DonorServiceClient bean) {
+        donorServiceClient = bean;
     }
 }

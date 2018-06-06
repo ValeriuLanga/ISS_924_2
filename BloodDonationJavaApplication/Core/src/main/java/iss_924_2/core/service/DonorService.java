@@ -4,11 +4,12 @@ import iss_924_2.core.domain.Analysis;
 import iss_924_2.core.domain.Donor;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 public interface DonorService {
 
-
+    List<Donor> getAllDonors();
     /**
      *
      */

@@ -1,5 +1,6 @@
 package iss_924_2.client.controller;
 
+import iss_924_2.client.console.ConsoleUi;
 import iss_924_2.client.content.doctor.BloodStockContent;
 import iss_924_2.client.content.doctor.CheckStatusContent;
 import iss_924_2.client.content.doctor.RequestBloodContent;
@@ -8,11 +9,17 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+@Component
 public class DoctorController implements Initializable {
+
+    ConsoleUi consoleUi;
 
     @FXML
     private BorderPane mainPane;
@@ -54,4 +61,5 @@ public class DoctorController implements Initializable {
 
         availableBloodButton.setOnAction(event -> changeContentToBloodStock());
     }
+
 }

@@ -2,12 +2,15 @@ package iss_924_2.server;
 
 import iss_924_2.core.domain.Address;
 import iss_924_2.core.domain.Donor;
+import iss_924_2.core.service.DonorService;
 import iss_924_2.server.repository.DonorRepository;
+import iss_924_2.server.service.DonorServiceServer;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class ServerApp {
 
     public static void main(String[] args) {
+        System.out.println("start server");
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext("iss_924_2.server.configuration");
 
@@ -24,8 +27,8 @@ public class ServerApp {
         d.setAddress(address2);
         d.setDateOfBirth("03-06-1992");
 
-        DonorRepository donorRepository = context.getBean(DonorRepository.class);
-        donorRepository.findAll().forEach(System.out::println);
+        DonorService donorService = context.getBean(DonorServiceServer.class);
+        donorService.getAllDonors().forEach(System.out::println);
 
         System.out.println("bye - server");
     }

@@ -1,5 +1,7 @@
 package iss_924_2.client.content.donor;
 
+import iss_924_2.client.service.DonorServiceClient;
+import iss_924_2.core.service.DonorService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -10,6 +12,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
 public class EditAccountContent extends AnchorPane {
+
+    DonorServiceClient donorServiceClient;
+
     @FXML
     private Label userFirstAndLastName;
     @FXML
@@ -73,7 +78,9 @@ public class EditAccountContent extends AnchorPane {
     @FXML
     private Label changeResidenceInfo;
 
-    public EditAccountContent() {
+    public EditAccountContent(DonorServiceClient service) {
+        donorServiceClient = service;
+
         FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../../resources/fx/donoractions/EditAccount.fxml"));
 
         fxmlLoader.setRoot(this);
@@ -117,6 +124,8 @@ public class EditAccountContent extends AnchorPane {
         changeResidenceCountry = (TextField) this.lookup("#changeResidenceCountry");
         changeResidenceButton = (Button) this.lookup("#changeResidenceButton");
         changeResidenceInfo = (Label) this.lookup("#changeResidenceInfo");
+
+        changeAddressCity.setText(donorServiceClient.getAllDonors().get(0).getAddress().getCity());
 
         changePasswordSwitch.setOnAction(event -> {
             if (changePasswordHbox.isVisible())

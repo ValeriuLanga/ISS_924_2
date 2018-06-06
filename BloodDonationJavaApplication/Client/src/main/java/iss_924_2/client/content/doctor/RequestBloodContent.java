@@ -1,5 +1,8 @@
 package iss_924_2.client.content.doctor;
 
+import iss_924_2.client.console.ConsoleUi;
+import iss_924_2.client.service.DonorServiceClient;
+import iss_924_2.core.service.DonorService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -7,7 +10,10 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RequestBloodContent extends AnchorPane {
 
     @FXML
@@ -37,6 +43,7 @@ public class RequestBloodContent extends AnchorPane {
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
+
         try {
 
             fxmlLoader.load();
@@ -61,7 +68,6 @@ public class RequestBloodContent extends AnchorPane {
         highUrgency.setUserData("Medium");
         lowUrgency.setToggleGroup(toggleGroup);
         highUrgency.setUserData("Low");
-
     }
 
     public String getBloodGroup() {

@@ -6,6 +6,7 @@ import iss_924_2.core.domain.Donor;
 import iss_924_2.core.domain.User;
 import iss_924_2.server.repository.Repository;
 import iss_924_2.core.service.DonorService;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,17 +15,18 @@ import java.util.*;
 /**
  * 
  */
-@Service
 public class DonorServiceServer implements DonorService {
-
-    public DonorServiceServer() {
-    }
 
     @Autowired
     private Repository donorRepository;
 
     @Autowired
     private Repository analysisRepository;
+
+    public List<Donor> getAllDonors(){
+        List<Donor> l =  donorRepository.findAll();
+        return l;
+    }
 
     public Set<Analysis> viewBloodAnalysisHistory(int id) {
         // TODO implement here
