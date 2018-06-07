@@ -24,4 +24,8 @@ public class Doctor extends User {
     @ManyToOne(fetch = FetchType.EAGER)
     private Hospital hospital;
 
+    @Override
+    public String toString() {
+        return "Doctor name: " + super.getFirstName();
+    }
 }

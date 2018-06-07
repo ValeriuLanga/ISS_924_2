@@ -27,4 +27,11 @@ public class Donation extends BaseEntity<Integer> {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Donor donor;
 
+    @Override
+    public String toString() {
+        return "Date: " + donationDate + ", " +
+                "Expiration: " + expirationDate + ", " +
+                "Status: " + status + ", " +
+                "Blood Type: " + blood.getBloodType();
+    }
 }

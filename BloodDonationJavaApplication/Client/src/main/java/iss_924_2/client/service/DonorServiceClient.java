@@ -57,7 +57,7 @@ public class DonorServiceClient implements DonorService {
 
     @Override
     public Set<Analysis> viewBloodAnalysisHistory(int id) {
-        return null;
+        return donorService.viewBloodAnalysisHistory(id);
     }
 
     @Override
