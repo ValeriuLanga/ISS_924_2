@@ -5,6 +5,7 @@ import iss_924_2.client.content.donor.EditAccountContent;
 import iss_924_2.client.content.donor.RequirementsContent;
 import iss_924_2.client.content.donor.ViewHistoryContent;
 import iss_924_2.client.service.DonorServiceClient;
+import iss_924_2.client.service.LoginServiceClient;
 import iss_924_2.core.domain.Address;
 import iss_924_2.core.domain.Analysis;
 import iss_924_2.core.domain.Donor;
@@ -12,13 +13,18 @@ import iss_924_2.core.domain.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,6 +37,7 @@ public class DonorController implements Initializable {
     AnnotationConfigApplicationContext springContext;
     DonorServiceClient donorServiceClient;
     Donor donor;
+    Stage mainStage;
 
     @FXML
     private BorderPane mainPane;
@@ -44,6 +51,9 @@ public class DonorController implements Initializable {
     private Button viewHistoryButton;
     @FXML
     private Button requirementsButton;
+    @FXML
+    private Button logout;
+
 
     private DonationFormContent donationFormContent;
     private EditAccountContent editAccountContent;
@@ -167,7 +177,7 @@ public class DonorController implements Initializable {
     }
 
     private void changeContentToFillDonationForm() {
-        donationFormContent = new DonationFormContent();
+        donationFormContent = new DonationFormContent(donor);
         mainPane.setCenter(donationFormContent);
     }
 
@@ -184,6 +194,7 @@ public class DonorController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         changeContentToRequirements();
 
         userNameLabel.setText(donor.getFirstName());
@@ -195,6 +206,20 @@ public class DonorController implements Initializable {
         viewHistoryButton.setOnAction(event -> changeContentToViewHistory());
 
         requirementsButton.setOnAction(event -> changeContentToRequirements());
+
+        logout.setOnAction(event ->{
+            try {
+                mainStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../../../resources/fx/AuthenticationWindow.fxml"));
+
+                AuthenticationController authenticationController = new AuthenticationController(springContext.getBean(LoginServiceClient.class), springContext);
+                fxmlLoader.setController(authenticationController);
+
+                mainStage.setScene(new Scene(fxmlLoader.load()));
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
+        });
     }
 
     public void setDonorService(DonorServiceClient bean) {

@@ -20,7 +20,6 @@ public class Request extends BaseEntity<Integer> {
     private Doctor doctor;
 
     @Enumerated(EnumType.STRING)
-    @Builder.Default
     private RequestStatus status = RequestStatus.registered;
 
     @Enumerated(EnumType.STRING)

@@ -1,5 +1,6 @@
 package iss_924_2.client.content.donor;
 
+import iss_924_2.core.domain.Donor;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -8,16 +9,21 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
+import java.time.LocalDate;
+
 public class DonationFormContent extends AnchorPane {
 
+    Donor donor;
     @FXML
     private Label eligibilityLabel;
+    @FXML
+    private Label infoLabel;
     @FXML
     private TextField donationFormFirstName;
     @FXML
     private TextField donationFormLastName;
     @FXML
-    private DatePicker donationFormDateOfBirth;
+    private TextField donationFormDateOfBirth;
     @FXML
     private TextField addressStreet;
     @FXML
@@ -37,7 +43,8 @@ public class DonationFormContent extends AnchorPane {
     @FXML
     private Button submitButton;
 
-    public DonationFormContent() {
+    public DonationFormContent(Donor d) {
+        donor = d;
         FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../../resources/fx/donoractions/DonationForm.fxml"));
 
         fxmlLoader.setRoot(this);
@@ -53,7 +60,7 @@ public class DonationFormContent extends AnchorPane {
         eligibilityLabel = (Label) this.lookup("#eligibilityLabel");
         donationFormFirstName = (TextField) this.lookup("#donationFormFirstName");
         donationFormLastName = (TextField) this.lookup("#donationFormLastName");
-        donationFormDateOfBirth = (DatePicker) this.lookup("#donationFormDateOfBirth");
+        donationFormDateOfBirth = (TextField) this.lookup("#dateofbirth");
         addressStreet = (TextField) this.lookup("#addressStreet");
         addressNumber = (TextField) this.lookup("#addressNumber");
         addressCity = (TextField) this.lookup("#addressCity");
@@ -63,6 +70,25 @@ public class DonationFormContent extends AnchorPane {
         residenceCity = (TextField) this.lookup("#residenceCity");
         residenceCountry = (TextField) this.lookup("#residenceCountry");
         submitButton = (Button) this.lookup("#submitButton");
+        infoLabel = (Label) this.lookup("#infolabel");
+
+        donationFormDateOfBirth.setText(donor.getDateOfBirth());
+        donationFormFirstName.setText(donor.getFirstName());
+        donationFormLastName.setText(donor.getLastName());
+        addressStreet.setText(donor.getAddress().getStreet());
+        addressCountry.setText(donor.getAddress().getCountry());
+        addressCity.setText(donor.getAddress().getCity());
+        addressNumber.setText(donor.getAddress().getNumber());
+        residenceStreet.setText(donor.getActualAddress().getStreet());
+        residenceCountry.setText(donor.getActualAddress().getCountry());
+        residenceCity.setText(donor.getActualAddress().getCity());
+        residenceNumber.setText(donor.getActualAddress().getNumber());
+
+        submitButton.setOnAction(event -> {
+            infoLabel.setText("Donation form submitted!");
+        });
+
+
     }
 
     public String getDonationFormFirstName() {

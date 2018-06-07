@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -10,9 +15,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+      <VBox layoutX="2.0" prefHeight="581.0" prefWidth="700.0" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="50.0">
          <children>
             <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
                <padding>
@@ -56,13 +61,13 @@
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="230.0">
                <padding>
                   <Insets left="20.0" />
                </padding>
                <children>
-                  <Button fx:id="changePasswordSwitch" mnemonicParsing="false" prefWidth="111.0" text="Change password" />
-                  <HBox fx:id="changePasswordHbox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="450.0" visible="false">
+                  <Button fx:id="changePasswordSwitch" mnemonicParsing="false" prefHeight="31.0" prefWidth="224.0" text="Change password" />
+                  <HBox fx:id="changePasswordHbox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="549.0" visible="false">
                      <HBox.margin>
                         <Insets left="20.0" />
                      </HBox.margin>
@@ -71,18 +76,18 @@
                            <children>
                               <HBox alignment="CENTER" prefHeight="33.0" prefWidth="200.0">
                                  <children>
-                                    <Label prefHeight="25.0" prefWidth="84.0" text="Old password: " />
+                                    <Label prefHeight="25.0" prefWidth="111.0" text="Old password: " />
                                     <PasswordField fx:id="oldPassword" />
                                  </children></HBox>
                               <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="200.0">
                                  <children>
-                                    <Label prefHeight="25.0" prefWidth="84.0" text="New password: " />
+                                    <Label prefHeight="25.0" prefWidth="111.0" text="New password: " />
                                     <PasswordField fx:id="newPassword" />
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="200.0">
                                  <children>
-                                    <Label prefHeight="25.0" prefWidth="84.0" text="Retype new: " />
+                                    <Label prefHeight="25.0" prefWidth="111.0" text="Retype new: " />
                                     <PasswordField fx:id="retypeNew" />
                                  </children>
                               </HBox>
@@ -111,7 +116,7 @@
                   <Insets left="20.0" />
                </padding>
                <children>
-                  <Button fx:id="changeNameSwitch" mnemonicParsing="false" prefWidth="111.0" text="Change name" />
+                  <Button fx:id="changeNameSwitch" mnemonicParsing="false" prefHeight="31.0" prefWidth="168.0" text="Change name" />
                   <HBox fx:id="changeNameHbox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="450.0" visible="false">
                      <children>
                         <VBox prefHeight="100.0" prefWidth="300.0">
@@ -156,7 +161,7 @@
                   <Insets left="20.0" />
                </padding>
                <children>
-                  <Button fx:id="changeAddressSwitch" mnemonicParsing="false" prefWidth="111.0" text="Change address" />
+                  <Button fx:id="changeAddressSwitch" mnemonicParsing="false" prefWidth="168.0" text="Change address" />
                   <HBox fx:id="changeAddressHbox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="450.0" visible="false">
                      <children>
                         <VBox prefHeight="100.0" prefWidth="300.0">
@@ -213,7 +218,7 @@
                   <Insets left="20.0" />
                </padding>
                <children>
-                  <Button fx:id="changeResidenceSwitch" mnemonicParsing="false" prefWidth="111.0" text="Change residence" />
+                  <Button fx:id="changeResidenceSwitch" mnemonicParsing="false" prefWidth="168.0" text="Change residence" />
                   <HBox fx:id="changeResidenceHbox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="450.0" visible="false">
                      <children>
                         <VBox prefHeight="100.0" prefWidth="300.0">

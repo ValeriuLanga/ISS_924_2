@@ -103,6 +103,7 @@ public class AuthenticationController implements Initializable {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+                    break;
                 }
                 case("Doctor") : {
                     try {
@@ -116,6 +117,7 @@ public class AuthenticationController implements Initializable {
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
+                    break;
                 }
             }
 

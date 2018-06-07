@@ -35,14 +35,13 @@ public class PersonnelServiceServer implements PersonnelService {
      * 
      */
     public String contactDonor(int id) {
-        // TODO implement here
 
         Optional<Donor> optionalDonor = donorRepository.findById(id);
-        String phoneNumber;
 
-        phoneNumber = optionalDonor.ifPresent(donor -> donor.getPhoneNumber());
+        if (optionalDonor.isPresent())
+            return optionalDonor.get().getPhoneNumber();
 
-        return phoneNumber;
+        return null;
     }
 
     /**

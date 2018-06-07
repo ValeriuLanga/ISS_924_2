@@ -20,11 +20,9 @@ public class Blood extends BaseEntity<Integer> {
     private boolean isRhPositive;
 
     @OneToMany(mappedBy = "blood", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
-    @Builder.Default
     private Set<Donation> donations = new HashSet<>();
 
     @OneToMany(mappedBy = "blood", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
-    @Builder.Default
     private Set<Patient> patients = new HashSet<>();
 
 }

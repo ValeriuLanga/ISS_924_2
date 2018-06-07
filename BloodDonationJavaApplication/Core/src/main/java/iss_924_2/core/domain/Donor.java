@@ -17,11 +17,12 @@ public class Donor extends User {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Address address;
 
+    private String phoneNumber;
+
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Address actualAddress;
 
     @OneToMany(mappedBy = "donor", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
-    @Builder.Default
     private Set<Donation> donation = new HashSet<>();
 
 }
