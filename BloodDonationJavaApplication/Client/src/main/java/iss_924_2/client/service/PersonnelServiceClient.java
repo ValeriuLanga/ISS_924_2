@@ -16,6 +16,11 @@ public class PersonnelServiceClient implements PersonnelService {
     }
 
     @Override
+    public String contactDonor(int id) {
+        return null;
+    }
+
+    @Override
     public void manageJourney() {
 
     }

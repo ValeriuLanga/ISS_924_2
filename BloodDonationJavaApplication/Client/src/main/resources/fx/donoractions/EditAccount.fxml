@@ -95,7 +95,7 @@
                                     <Insets bottom="12.0" top="12.0" />
                                  </VBox.margin>
                               </Button>
-                              <Label fx:id="changePasswordInfo" prefHeight="25.0">
+                              <Label fx:id="changePasswordInfo" prefHeight="50.0" textAlignment="CENTER" wrapText="true">
                                  <VBox.margin>
                                     <Insets bottom="12.0" top="12.0" />
                                  </VBox.margin>
@@ -137,7 +137,7 @@
                                     <Insets bottom="12.0" top="12.0" />
                                  </VBox.margin>
                               </Button>
-                              <Label fx:id="changeNameInfo" prefHeight="25.0">
+                              <Label fx:id="changeNameInfo" prefHeight="25.0" textAlignment="CENTER" wrapText="true">
                                  <VBox.margin>
                                     <Insets bottom="12.0" top="12.0" />
                                  </VBox.margin>
@@ -157,7 +157,7 @@
                </padding>
                <children>
                   <Button fx:id="changeAddressSwitch" mnemonicParsing="false" prefWidth="111.0" text="Change address" />
-                  <HBox fx:id="changeAddressHbox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="450.0">
+                  <HBox fx:id="changeAddressHbox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="450.0" visible="false">
                      <children>
                         <VBox prefHeight="100.0" prefWidth="300.0">
                            <children>
@@ -194,7 +194,7 @@
                                     <Insets bottom="12.0" top="12.0" />
                                  </VBox.margin>
                               </Button>
-                              <Label fx:id="changeAddressInfo" prefHeight="25.0">
+                              <Label fx:id="changeAddressInfo" prefHeight="25.0" textAlignment="CENTER" wrapText="true">
                                  <VBox.margin>
                                     <Insets bottom="12.0" top="12.0" />
                                  </VBox.margin>
@@ -251,7 +251,7 @@
                                     <Insets bottom="12.0" top="12.0" />
                                  </VBox.margin>
                               </Button>
-                              <Label fx:id="changeResidenceInfo" prefHeight="25.0">
+                              <Label fx:id="changeResidenceInfo" prefHeight="25.0" textAlignment="CENTER" wrapText="true">
                                  <VBox.margin>
                                     <Insets bottom="12.0" top="12.0" />
                                  </VBox.margin>

@@ -6,11 +6,11 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @Entity
-@Data
 public class Doctor extends User {
 
     @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
@@ -24,4 +24,8 @@ public class Doctor extends User {
     @ManyToOne(fetch = FetchType.EAGER)
     private Hospital hospital;
 
+    @Override
+    public String toString() {
+        return "Doctor name: " + super.getFirstName();
+    }
 }

@@ -5,11 +5,11 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.*;
 
-@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @Entity
-@Data
 public class Donor extends User {
 
     private String dateOfBirth;

@@ -5,12 +5,11 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@Getter
+@Setter
 @Entity
-@Data
 public class Donation extends BaseEntity<Integer> {
 
     private int quantity;
@@ -22,10 +21,17 @@ public class Donation extends BaseEntity<Integer> {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Blood blood;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Donor donor;
 
+    @Override
+    public String toString() {
+        return "Date: " + donationDate + ", " +
+                "Expiration: " + expirationDate + ", " +
+                "Status: " + status + ", " +
+                "Blood Type: " + blood.getBloodType();
+    }
 }

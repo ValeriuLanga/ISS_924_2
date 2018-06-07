@@ -4,11 +4,10 @@ import lombok.*;
 
 import javax.persistence.*;
 
-
-@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
+@Getter
+@Setter
 @Entity
-@Data
 public class Personnel extends User {
 
 }

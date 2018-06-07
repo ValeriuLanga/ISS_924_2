@@ -6,9 +6,8 @@ import iss_924_2.core.domain.Donor;
 import iss_924_2.core.domain.User;
 import iss_924_2.server.repository.Repository;
 import iss_924_2.core.service.DonorService;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
@@ -29,7 +28,6 @@ public class DonorServiceServer implements DonorService {
     }
 
     public Set<Analysis> viewBloodAnalysisHistory(int id) {
-        // TODO implement here
 
         List<Analysis> analysisList = analysisRepository.findAll();
         Set<Analysis> analysisHistory = new HashSet<>();
@@ -43,7 +41,7 @@ public class DonorServiceServer implements DonorService {
         return analysisHistory;
     }
 
-    public Date viewNextDonationDate(int id) {
+    public String viewNextDonationDate(int id) {
         // TODO implement here
 
 
@@ -51,7 +49,6 @@ public class DonorServiceServer implements DonorService {
     }
 
     public void register(String username, String password, String firstName, String lastName, String dateOfBirth, String street, String number, String city, String country, String actualStreet, String actualNumber, String actualCity, String actualCountry){
-        // TODO implement here
         User donor = new Donor();
 
         donor.setUserName(username);
@@ -65,11 +62,9 @@ public class DonorServiceServer implements DonorService {
         ((Donor) donor).setActualAddress(actualAddress);
 
         donorRepository.save(donor);
-
     }
 
     public void changePersonalInformation(int id, Donor donor) {
-        // TODO implement here
         Optional<Donor> optionalDonor = donorRepository.findById(id);
 
         optionalDonor.ifPresent(d -> {
@@ -83,6 +78,7 @@ public class DonorServiceServer implements DonorService {
             d.setDonation(donor.getDonation());
         });
 
+        donorRepository.save(donor);
     }
 
     public void donateToSpecificPerson(int id, String name) {

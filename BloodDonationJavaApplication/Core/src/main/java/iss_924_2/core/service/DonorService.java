@@ -2,6 +2,7 @@ package iss_924_2.core.service;
 
 import iss_924_2.core.domain.Analysis;
 import iss_924_2.core.domain.Donor;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
@@ -24,7 +25,7 @@ public interface DonorService {
     /**
      *
      */
-    Date viewNextDonationDate(int id);
+    String viewNextDonationDate(int id);
 
     /**
      * @param donor

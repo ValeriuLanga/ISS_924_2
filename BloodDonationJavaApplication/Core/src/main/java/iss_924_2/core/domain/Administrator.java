@@ -4,10 +4,10 @@ import lombok.*;
 
 import javax.persistence.Entity;
 
-@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
+@Getter
+@Setter
 @Entity
-@Data
 public class Administrator extends User {
 
 }

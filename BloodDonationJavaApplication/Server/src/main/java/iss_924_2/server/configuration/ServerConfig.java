@@ -1,7 +1,11 @@
 package iss_924_2.server.configuration;
 
+import iss_924_2.core.service.DoctorService;
 import iss_924_2.core.service.DonorService;
+import iss_924_2.core.service.LoginService;
+import iss_924_2.server.service.DoctorServiceServer;
 import iss_924_2.server.service.DonorServiceServer;
+import iss_924_2.server.service.LoginServiceServer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +16,7 @@ import org.springframework.remoting.rmi.RmiServiceExporter;
 public class ServerConfig {
 
     @Bean
-    DonorService bookService() {
+    DonorService provideDonorService() {
         return new DonorServiceServer();
     }
 
@@ -21,7 +25,33 @@ public class ServerConfig {
         RmiServiceExporter exporter=new RmiServiceExporter();
         exporter.setServiceName("DonorService");
         exporter.setServiceInterface(DonorService.class);
-        exporter.setService(bookService());
+        exporter.setService(provideDonorService());
+        return exporter;
+    }
+
+    @Bean
+    LoginService provideLoginService() {
+        return new LoginServiceServer();
+    }
+
+    @Bean
+    RmiServiceExporter rmiServiceExporterLogin(){
+        RmiServiceExporter exporter=new RmiServiceExporter();
+        exporter.setServiceName("LoginService");
+        exporter.setServiceInterface(LoginService.class);
+        exporter.setService(provideLoginService());
+        return exporter;
+    }
+
+    @Bean
+    DoctorService provideDoctorService() { return new DoctorServiceServer(); }
+
+    @Bean
+    RmiServiceExporter rmiServiceExporterDoctor(){
+        RmiServiceExporter exporter=new RmiServiceExporter();
+        exporter.setServiceName("DoctorService");
+        exporter.setServiceInterface(DoctorService.class);
+        exporter.setService(provideDoctorService());
         return exporter;
     }
 }

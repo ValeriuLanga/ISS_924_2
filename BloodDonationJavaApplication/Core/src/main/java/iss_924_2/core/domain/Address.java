@@ -3,12 +3,11 @@ package iss_924_2.core.domain;
 import lombok.*;
 import javax.persistence.Entity;
 
-@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@Getter
+@Setter
 @Entity
-@Data
 public class Address extends BaseEntity<Integer> {
 
     private String street;

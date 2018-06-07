@@ -8,6 +8,8 @@ public interface PersonnelService {
     /**
      *
      */
+    String contactDonor(int id);
+
     void collectData();
 
     /**

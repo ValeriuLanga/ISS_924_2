@@ -4,15 +4,14 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@Getter
+@Setter
 @Entity
-@Data
 public class Analysis extends BaseEntity<Integer> {
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Doctor doctor;
 
     private boolean validity;
@@ -20,4 +19,14 @@ public class Analysis extends BaseEntity<Integer> {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Donation donation;
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        if (donation != null)
+            sb.append(donation.toString());
+        sb.append(", ");
+        if (doctor != null)
+            sb.append(doctor.toString());
+        return sb.toString();
+    }
 }
