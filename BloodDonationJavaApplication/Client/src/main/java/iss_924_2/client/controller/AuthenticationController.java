@@ -3,8 +3,10 @@ package iss_924_2.client.controller;
 import iss_924_2.client.ClientAppFX;
 import iss_924_2.client.content.authentication.LoginContent;
 import iss_924_2.client.content.authentication.RegisterContent;
+import iss_924_2.client.service.DoctorServiceClient;
 import iss_924_2.client.service.DonorServiceClient;
 import iss_924_2.client.service.LoginServiceClient;
+import iss_924_2.core.domain.Doctor;
 import iss_924_2.core.domain.Donor;
 import iss_924_2.core.domain.User;
 import iss_924_2.core.exceptions.LoginServiceException;
@@ -100,6 +102,19 @@ public class AuthenticationController implements Initializable {
                         mainStage.setScene(new Scene(fxmlLoader.load()));
                     } catch (IOException e) {
                         e.printStackTrace();
+                    }
+                }
+                case("Doctor") : {
+                    try {
+                        Doctor doctor = (Doctor) user;
+                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../../../resources/fx/DoctorWindow.fxml"));
+
+                        DoctorController doctorController = new DoctorController(springContext.getBean(DoctorServiceClient.class), springContext, doctor);
+                        fxmlLoader.setController(doctorController);
+
+                        mainStage.setScene(new Scene(fxmlLoader.load()));
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
                     }
                 }
             }

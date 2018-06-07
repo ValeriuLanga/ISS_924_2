@@ -74,7 +74,7 @@ public class DonorController implements Initializable {
 
                     donorServiceClient.changePersonalInformation(donor.getId(), newDonor);
 
-                    editAccountContent.setChangePasswordInfo("Password changed successfully!");
+                    editAccountContent.setChangePasswordInfo("Password changed!");
                 } else {
                     editAccountContent.setChangePasswordInfo("New passwords not identical!");
                 }
@@ -92,7 +92,7 @@ public class DonorController implements Initializable {
 
                     donorServiceClient.changePersonalInformation(donor.getId(), newDonor);
 
-                    editAccountContent.setChangeNameInfo("Name changed successfully!");
+                    editAccountContent.setChangeNameInfo("Name changed!");
                 } else {
                     editAccountContent.setChangeNameInfo("Last name empty!");
                 }
@@ -117,7 +117,7 @@ public class DonorController implements Initializable {
 
                             donorServiceClient.changePersonalInformation(donor.getId(), newDonor);
 
-                            editAccountContent.setChangeAddressInfo("Address changed successfully!");
+                            editAccountContent.setChangeAddressInfo("Address changed!");
                         } else {
                             editAccountContent.setChangeAddressInfo("Country is empty!");
                         }
@@ -148,7 +148,7 @@ public class DonorController implements Initializable {
 
                             donorServiceClient.changePersonalInformation(donor.getId(), newDonor);
 
-                            editAccountContent.setChangeResidenceInfo("Address changed successfully!");
+                            editAccountContent.setChangeResidenceInfo("Residence changed!");
                         } else {
                             editAccountContent.setChangeResidenceInfo("Country is empty!");
                         }

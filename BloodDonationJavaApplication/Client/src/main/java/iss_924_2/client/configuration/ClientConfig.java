@@ -28,19 +28,19 @@ public class ClientConfig {
 //        proxy.setServiceUrl("rmi://localhost:1099/AdminService");
 //        return proxy;
 //    }
-//
-//    @Bean
-//    DoctorService provideDoctorServiceClient(){
-//        return new DoctorServiceClient();
-//    }
-//
-//    @Bean
-//    RmiProxyFactoryBean rmiProxyFactoryBeanDoctor(){
-//        RmiProxyFactoryBean proxy=new RmiProxyFactoryBean();
-//        proxy.setServiceInterface(DoctorService.class);
-//        proxy.setServiceUrl("rmi://localhost:1099/DoctorService");
-//        return proxy;
-//    }
+
+    @Bean
+    DoctorServiceClient provideDoctorServiceClient(){
+        return new DoctorServiceClient();
+    }
+
+    @Bean(name = "DoctorServiceClient")
+    RmiProxyFactoryBean rmiProxyFactoryBeanDoctor(){
+        RmiProxyFactoryBean proxy=new RmiProxyFactoryBean();
+        proxy.setServiceInterface(DoctorService.class);
+        proxy.setServiceUrl("rmi://localhost:1099/DoctorService");
+        return proxy;
+    }
 
     @Bean
     DonorServiceClient provideDonorServiceClient(){

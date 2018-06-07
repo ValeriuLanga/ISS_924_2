@@ -4,28 +4,31 @@ import iss_924_2.core.domain.Blood;
 import iss_924_2.core.domain.BloodContainer;
 import iss_924_2.core.domain.Hospital;
 import iss_924_2.core.service.DoctorService;
+import iss_924_2.core.utils.RequestStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.Set;
 
 public class DoctorServiceClient implements DoctorService {
 
     @Autowired
+    @Qualifier("DoctorServiceClient")
     DoctorService doctorService;
 
     @Override
-    public void requestBlood(BloodContainer bloodContainer) {
-        doctorService.requestBlood(bloodContainer);
+    public void requestBlood(BloodContainer bloodContainer, int quantity, int urgencyLevel) {
+        doctorService.requestBlood(bloodContainer, quantity, urgencyLevel);
     }
 
     @Override
-    public String checkRequestStatus() {
-        return doctorService.checkRequestStatus();
+    public RequestStatus checkRequestStatus(int id) {
+        return doctorService.checkRequestStatus(id);
     }
 
     @Override
-    public void cancelBloodRequest() {
-        doctorService.cancelBloodRequest();
+    public void cancelBloodRequest(int id) {
+        doctorService.cancelBloodRequest(id);
     }
 
     @Override
@@ -34,7 +37,7 @@ public class DoctorServiceClient implements DoctorService {
     }
 
     @Override
-    public Set<Blood> getAvailableStocks(Hospital hospital) {
+    public Set<BloodContainer> getAvailableStocks(Hospital hospital) {
         return doctorService.getAvailableStocks(hospital);
     }
 }

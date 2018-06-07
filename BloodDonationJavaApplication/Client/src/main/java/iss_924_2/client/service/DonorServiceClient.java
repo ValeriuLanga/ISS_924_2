@@ -66,7 +66,7 @@ public class DonorServiceClient implements DonorService {
     }
 
     @Override
-    public Date viewNextDonationDate(int id) {
+    public String viewNextDonationDate(int id) {
         return null;
     }
 
