@@ -7,7 +7,6 @@ import java.util.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Getter
 @Setter
 @Entity

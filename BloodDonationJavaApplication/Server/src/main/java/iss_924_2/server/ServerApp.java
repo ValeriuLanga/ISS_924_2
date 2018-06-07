@@ -58,7 +58,7 @@ public class ServerApp {
        // System.out.println(blood.getPatients());
 
 //        context.getBean(BloodRepository.class).findAll().forEach(b -> System.out.print(b.getDonations()));
-        context.getBean(AnalysisRepository.class).save(analysis);
+        //context.getBean(AnalysisRepository.class).save(analysis);
         //context.getBean(DonorServiceServer.class).getAllDonors().forEach(System.out::println);
 
         System.out.println("server started");
