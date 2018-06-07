@@ -43,7 +43,7 @@ public class DonorServiceServer implements DonorService {
         return analysisHistory;
     }
 
-    public Date viewNextDonationDate(int id) {
+    public String viewNextDonationDate(int id) {
         // TODO implement here
 
 

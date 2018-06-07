@@ -7,6 +7,8 @@ import iss_924_2.core.domain.User;
 
 import iss_924_2.server.repository.Repository;
 
+import java.util.Optional;
+
 /**
  * 
  */
@@ -32,8 +34,15 @@ public class PersonnelServiceServer implements PersonnelService {
     /**
      * 
      */
-    public void contactDonor() {
+    public String contactDonor(int id) {
         // TODO implement here
+
+        Optional<Donor> optionalDonor = donorRepository.findById(id);
+        String phoneNumber;
+
+        phoneNumber = optionalDonor.ifPresent(donor -> donor.getPhoneNumber());
+
+        return phoneNumber;
     }
 
     /**

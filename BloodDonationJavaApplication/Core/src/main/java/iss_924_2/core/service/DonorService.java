@@ -24,7 +24,7 @@ public interface DonorService {
     /**
      *
      */
-    Date viewNextDonationDate(int id);
+    String viewNextDonationDate(int id);
 
     /**
      * @param donor
