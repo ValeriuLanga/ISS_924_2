@@ -28,4 +28,8 @@ public class Request extends BaseEntity<Integer> {
 
     private int quantity;
 
+    public void cancelRequest() {
+        status = RequestStatus.cancelled;
+    }
+
 }
