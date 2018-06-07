@@ -6,12 +6,12 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Getter
+@Setter
 @Entity
-@Data
 public class BloodContainer extends BaseEntity<Integer> {
 
     // Expiration date
@@ -23,7 +23,7 @@ public class BloodContainer extends BaseEntity<Integer> {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Hospital hospital;
 
 }

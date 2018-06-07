@@ -7,12 +7,12 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Getter
+@Setter
 @Entity
-@Data
 public class Blood extends BaseEntity<Integer> {
 
     @Enumerated(EnumType.STRING)

@@ -6,6 +6,7 @@ import iss_924_2.core.utils.Status;
 import iss_924_2.core.utils.UserType;
 import iss_924_2.server.repository.AnalysisRepository;
 import iss_924_2.server.repository.BloodRepository;
+import iss_924_2.server.repository.DonorRepository;
 import iss_924_2.server.service.DonorServiceServer;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -32,6 +33,7 @@ public class ServerApp {
         d.setDateOfBirth("03-06-1992");
         d.setUserType(UserType.Donor);
 
+//        context.getBean(DonorRepository.class).save(d);
 
         Blood blood = new Blood();
         blood.setBloodType(BloodType.AB4);
@@ -43,10 +45,10 @@ public class ServerApp {
         donation.setExpirationDate("10-10-2015");
         donation.setQuantity(10);
         donation.setStatus(Status.preparation);
-        donation.setBlood(blood);
         donation.setDonor(d);
 
-        //blood.getDonations().add(donation);
+        blood.getDonations().add(donation);
+        donation.setBlood(blood);
 
         Analysis analysis = new Analysis();
         analysis.setValidity(true);
@@ -55,8 +57,8 @@ public class ServerApp {
 
        // System.out.println(blood.getPatients());
 
-        context.getBean(BloodRepository.class).findAll().forEach(b -> System.out.print(b.getDonations()));
-        //context.getBean(AnalysisRepository.class).save(analysis);
+//        context.getBean(BloodRepository.class).findAll().forEach(b -> System.out.print(b.getDonations()));
+        context.getBean(AnalysisRepository.class).save(analysis);
         //context.getBean(DonorServiceServer.class).getAllDonors().forEach(System.out::println);
 
         System.out.println("server started");

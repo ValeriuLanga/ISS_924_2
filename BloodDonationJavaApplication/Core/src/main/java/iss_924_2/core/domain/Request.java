@@ -3,20 +3,21 @@ package iss_924_2.core.domain;
 import iss_924_2.core.utils.ContainerType;
 import iss_924_2.core.utils.RequestStatus;
 import lombok.*;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 
-@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Getter
+@Setter
 @Entity
-@Data
 public class Request extends BaseEntity<Integer> {
 
     private int urgencyLevel;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Doctor doctor;
 
     @Enumerated(EnumType.STRING)

@@ -5,13 +5,13 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Getter
+@Setter
 @Entity
 @Table(name = "users")
-@Data
 public class User extends BaseEntity<Integer> {
 
     @Column(unique = true)

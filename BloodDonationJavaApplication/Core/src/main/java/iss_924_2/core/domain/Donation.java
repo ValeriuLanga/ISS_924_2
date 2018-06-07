@@ -5,12 +5,12 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Getter
+@Setter
 @Entity
-@Data
 public class Donation extends BaseEntity<Integer> {
 
     private int quantity;

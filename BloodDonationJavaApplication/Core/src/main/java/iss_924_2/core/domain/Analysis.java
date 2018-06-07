@@ -4,12 +4,12 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Getter
+@Setter
 @Entity
-@Data
 public class Analysis extends BaseEntity<Integer> {
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

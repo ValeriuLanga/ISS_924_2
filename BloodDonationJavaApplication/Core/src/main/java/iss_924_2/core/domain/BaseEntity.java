@@ -3,9 +3,6 @@ package iss_924_2.core.domain;
 import javax.persistence.*;
 import java.io.Serializable;
 
-/**
- * Created by radu.
- */
 @MappedSuperclass
 public class BaseEntity<ID> implements Serializable {
 
