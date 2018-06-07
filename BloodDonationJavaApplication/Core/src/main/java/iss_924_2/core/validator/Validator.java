@@ -62,7 +62,7 @@ public final class Validator {
             throw new InvalidDateException("Month is not valid!");
         if(month == 2)
             if(day > 28)
-                throw new InvalidDateException("Day is not valid!")
+                throw new InvalidDateException("Day is not valid!");
 
     }
 
