@@ -14,7 +14,7 @@ public class LoginServiceClient implements LoginService {
     LoginService loginService;
 
     @Override
-    public Optional<User> LoginUser(String userName, String password) {
+    public User LoginUser(String userName, String password) {
         return loginService.LoginUser(userName, password);
     }
 

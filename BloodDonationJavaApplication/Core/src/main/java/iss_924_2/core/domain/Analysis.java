@@ -4,7 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Data
 public class Analysis extends BaseEntity<Integer> {
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Doctor doctor;
 
     private boolean validity;

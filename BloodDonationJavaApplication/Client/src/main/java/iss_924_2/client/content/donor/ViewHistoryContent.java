@@ -8,7 +8,7 @@ import javafx.scene.layout.AnchorPane;
 public class ViewHistoryContent extends AnchorPane {
 
     @FXML
-    private ListView listView;
+    private ListView<String> listView;
 
     public ViewHistoryContent() {
         FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../../resources/fx/donoractions/ViewHistory.fxml"));

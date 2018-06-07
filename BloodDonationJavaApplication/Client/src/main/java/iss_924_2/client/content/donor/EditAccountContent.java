@@ -166,7 +166,7 @@ public class EditAccountContent extends AnchorPane {
     }
 
     public String getUserFirstAndLastName() {
-        return userFirstAndLastName.toString();
+        return userFirstAndLastName.getText();
     }
 
     public void setUserFirstAndLastName(String userFirstAndLastName) {
@@ -174,7 +174,7 @@ public class EditAccountContent extends AnchorPane {
     }
 
     public String getUserUsername() {
-        return userUsername.toString();
+        return userUsername.getText();
     }
 
     public void setUserUsername(String userUsername) {
@@ -186,15 +186,15 @@ public class EditAccountContent extends AnchorPane {
     }
 
     public String getOldPassword() {
-        return oldPassword.toString();
+        return oldPassword.getText();
     }
 
     public String getNewPassword() {
-        return newPassword.toString();
+        return newPassword.getText();
     }
 
     public String getRetypeNew() {
-        return retypeNew.toString();
+        return retypeNew.getText();
     }
 
     public Button getChangePasswordButton() {
@@ -202,7 +202,7 @@ public class EditAccountContent extends AnchorPane {
     }
 
     public String getChangePasswordInfo() {
-        return changePasswordInfo.toString();
+        return changePasswordInfo.getText();
     }
 
     public void setChangePasswordInfo(String changePasswordInfo) {
@@ -214,7 +214,7 @@ public class EditAccountContent extends AnchorPane {
     }
 
     public String getChangeFirstNameField() {
-        return changeFirstNameField.toString();
+        return changeFirstNameField.getText();
     }
 
     public void setChangeFirstNameField(String changeFirstNameField) {
@@ -222,7 +222,7 @@ public class EditAccountContent extends AnchorPane {
     }
 
     public String getChangeLastNameField() {
-        return changeLastNameField.toString();
+        return changeLastNameField.getText();
     }
 
     public void setChangeLastNameField(String changeFirstNameField) {
@@ -234,7 +234,7 @@ public class EditAccountContent extends AnchorPane {
     }
 
     public String getChangeNameInfo() {
-        return changeNameInfo.toString();
+        return changeNameInfo.getText();
     }
 
     public void setChangeNameInfo(String changeNameInfo) {
@@ -246,7 +246,7 @@ public class EditAccountContent extends AnchorPane {
     }
 
     public String getChangeAddressStreet() {
-        return changeAddressStreet.toString();
+        return changeAddressStreet.getText();
     }
 
     public void setChangeAddressStreet(String changeAddressStreet) {
@@ -254,7 +254,7 @@ public class EditAccountContent extends AnchorPane {
     }
 
     public String getChangeAddressNumber() {
-        return changeAddressNumber.toString();
+        return changeAddressNumber.getText();
     }
 
     public void setChangeAddressNumber(String changeAddressNumber) {
@@ -262,7 +262,7 @@ public class EditAccountContent extends AnchorPane {
     }
 
     public String getChangeAddressCity() {
-        return changeAddressCity.toString();
+        return changeAddressCity.getText();
     }
 
     public void setChangeAddressCity(String changeAddressCity) {
@@ -270,7 +270,7 @@ public class EditAccountContent extends AnchorPane {
     }
 
     public String getChangeAddressCountry() {
-        return changeAddressCountry.toString();
+        return changeAddressCountry.getText();
     }
 
     public void setChangeAddressCountry(String changeAddressCountry) {
@@ -282,7 +282,7 @@ public class EditAccountContent extends AnchorPane {
     }
 
     public String getChangeAddressInfo() {
-        return changeAddressInfo.toString();
+        return changeAddressInfo.getText();
     }
 
     public void setChangeAddressInfo(String changeAddressInfo) {
@@ -294,7 +294,7 @@ public class EditAccountContent extends AnchorPane {
     }
 
     public String getChangeResidenceStreet() {
-        return changeResidenceStreet.toString();
+        return changeResidenceStreet.getText();
     }
 
     public void setChangeResidenceStreet(String changeResidenceStreet) {
@@ -302,7 +302,7 @@ public class EditAccountContent extends AnchorPane {
     }
 
     public String getChangeResidenceNumber() {
-        return changeResidenceNumber.toString();
+        return changeResidenceNumber.getText();
     }
 
     public void setChangeResidenceNumber(String changeResidenceNumber) {
@@ -310,7 +310,7 @@ public class EditAccountContent extends AnchorPane {
     }
 
     public String getChangeResidenceCity() {
-        return changeResidenceCity.toString();
+        return changeResidenceCity.getText();
     }
 
     public void setChangeResidenceCity(String changeResidenceCity) {
@@ -318,7 +318,7 @@ public class EditAccountContent extends AnchorPane {
     }
 
     public String getChangeResidenceCountry() {
-        return changeResidenceCountry.toString();
+        return changeResidenceCountry.getText();
     }
 
     public void setChangeResidenceCountry(String changeResidenceCountry) {
@@ -330,7 +330,7 @@ public class EditAccountContent extends AnchorPane {
     }
 
     public String getChangeResidenceInfo() {
-        return changeResidenceInfo.toString();
+        return changeResidenceInfo.getText();
     }
 
     public void setChangeResidenceInfo(String changeResidenceInfo) {

@@ -34,15 +34,15 @@ public class LoginContent extends AnchorPane {
     }
 
     public String getUserNameField() {
-        return userNameField.toString();
+        return userNameField.getText();
     }
 
     public String getPasswordField() {
-        return passwordField.toString();
+        return passwordField.getText();
     }
 
     public String getErrorLabel() {
-        return errorLabel.toString();
+        return errorLabel.getText();
     }
 
     public void setErrorLabel(String errorLabel) {

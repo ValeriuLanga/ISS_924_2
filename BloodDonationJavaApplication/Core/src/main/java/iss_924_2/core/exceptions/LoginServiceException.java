@@ -1,4 +1,4 @@
-package iss_924_2.server.exceptions;
+package iss_924_2.core.exceptions;
 
 public class LoginServiceException extends RuntimeException{
 

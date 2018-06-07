@@ -1,10 +1,9 @@
 package iss_924_2.core.domain;
 
+import iss_924_2.core.utils.UserType;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
@@ -23,4 +22,7 @@ public class User extends BaseEntity<Integer> {
     protected String firstName;
 
     protected String lastName;
+
+    @Enumerated(EnumType.STRING)
+    protected UserType userType;
 }

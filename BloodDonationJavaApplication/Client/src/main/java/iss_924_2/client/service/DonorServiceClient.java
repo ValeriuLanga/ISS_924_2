@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
@@ -71,7 +72,7 @@ public class DonorServiceClient implements DonorService {
 
     @Override
     public void changePersonalInformation(int id, Donor donor) {
-
+        donorService.changePersonalInformation(id, donor);
     }
 
     @Override

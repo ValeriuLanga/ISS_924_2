@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -22,7 +22,7 @@ public class Blood extends BaseEntity<Integer> {
 
     @OneToMany(mappedBy = "blood", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     @Builder.Default
-    private Set<Donation> donation = new HashSet<>();
+    private Set<Donation> donations = new HashSet<>();
 
     @OneToMany(mappedBy = "blood", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     @Builder.Default

@@ -1,9 +1,6 @@
 package iss_924_2.core.domain;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -13,7 +10,7 @@ import java.io.Serializable;
 public class BaseEntity<ID> implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(unique = true, nullable = false)
     private ID id;
 
