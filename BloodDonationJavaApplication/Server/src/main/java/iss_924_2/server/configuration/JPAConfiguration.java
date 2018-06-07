@@ -35,7 +35,7 @@ public class JPAConfiguration {
         dataSource.setDatabaseName("jwssuxgy");
         dataSource.setUser(username);
         dataSource.setPassword(password);
-        dataSource.setMaxConnections(8);
+        dataSource.setMaxConnections(100);
 
         return dataSource;
     }

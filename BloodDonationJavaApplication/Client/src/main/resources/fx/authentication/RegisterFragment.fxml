@@ -16,7 +16,7 @@
          <children>
             <Label alignment="CENTER" minHeight="40.0" minWidth="-Infinity" prefHeight="40.0" text="REGISTER" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                <font>
-                  <Font name="Stencil" size="30.0" />
+                  <Font name="Trebuchet MS" size="30.0" />
                </font>
             </Label>
             <HBox prefHeight="70.0" prefWidth="200.0" />

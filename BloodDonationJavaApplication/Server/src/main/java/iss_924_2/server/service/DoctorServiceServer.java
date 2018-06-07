@@ -4,9 +4,11 @@ import iss_924_2.core.domain.*;
 import iss_924_2.core.utils.RequestStatus;
 import iss_924_2.server.repository.Repository;
 import iss_924_2.core.service.DoctorService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * 
@@ -22,48 +24,59 @@ public class DoctorServiceServer implements DoctorService {
     /**
      * 
      */
-    public Doctor currentUser;
-
-    /**
-     * 
-     */
+    @Autowired
     private Repository doctorRepository;
 
+    @Autowired
+    private Repository hospitalRepository;
+
+    @Autowired
+    private Repository requestRepository;
+
     /**
      * 
      */
-    public RequestStatus checkRequestStatus(int id) {
-        // TODO implement here
+    public Set<Request> checkRequestStatus(int id) {
+        Optional<Doctor> optionalDoctor = doctorRepository.findById(id);
+        Set<Request> requests = null;
 
-        Set<Request> requests = currentUser.getRequest();
 
-        Request request = requests.stream().filter(r -> r.getId() == id).findFirst().get();
+        if (optionalDoctor.isPresent()) {
+            requests = optionalDoctor.get().getRequest().stream().filter(request -> request.getDoctor().getId()
+                    .equals(id)).collect(Collectors.toSet());
+        }
 
-        RequestStatus status = request.getStatus();
-
-        return status;
+        return requests;
     }
 
-    /**
-     * 
-     */
-    public void requestBlood(BloodContainer bloodContainer, int quantity, int urgencyLevel) {
-        // TODO implement here
-        Request request = new Request();
-        request.setContainerType(bloodContainer.getContainerType());
-        request.setDoctor(currentUser);
-        request.setQuantity(quantity);
-        request.setUrgencyLevel(urgencyLevel);
-
-        currentUser.getRequest().add(request);
-    }
-
-    /**
-     * 
-     */
+    @Override
     public void cancelBloodRequest(int id) {
-        // TODO implement here
-        Set<Request> requests = currentUser.getRequest();
+        Optional<Request> request = requestRepository.findById(id);
+
+        if (request.isPresent()) {
+            request.get().setStatus(RequestStatus.cancelled);
+
+            requestRepository.save(request.get());
+        }
+    }
+
+    /**
+     * 
+     */
+    public void requestBlood(Request request, Doctor doctor) {
+
+        doctor.getRequest().add(request);
+
+        System.out.println(doctor.getRequest());
+
+        doctorRepository.save(doctor);
+    }
+
+    /**
+     * 
+     */
+    public void cancelBloodRequest(int id, Doctor doctor) {
+        Set<Request> requests = doctor.getRequest();
 
         Optional<Request> optoinalRequest = requests.stream().filter(r -> r.getId() == id).findFirst();
 
@@ -71,20 +84,16 @@ public class DoctorServiceServer implements DoctorService {
     }
 
     /**
-     *
+     * @param hospitalId
      */
-    public boolean checkDonationForPerson() {
-        // TODO implement here    /**
+    public Set<BloodContainer> getAvailableStocks(int hospitalId) {
+        Set<BloodContainer> availableStocks = null;
 
-        return true;
-    }
+        Optional<Hospital> hospital = hospitalRepository.findById(hospitalId);
 
-    /**
-     * @param hospital
-     */
-    public Set<BloodContainer> getAvailableStocks(Hospital hospital) {
-        // TODO implement here
-        Set<BloodContainer> availableStocks = hospital.getBloodContainers();
+        if (hospital.isPresent()) {
+            availableStocks = hospital.get().getBloodContainers();
+        }
 
         return availableStocks;
     }

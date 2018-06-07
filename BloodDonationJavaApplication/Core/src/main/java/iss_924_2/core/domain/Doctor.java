@@ -14,14 +14,12 @@ import java.util.Set;
 public class Doctor extends User {
 
     @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
-    @Builder.Default
     private Set<Analysis> analysis = new HashSet<>();
 
     @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
-    @Builder.Default
     private Set<Request> request = new HashSet<>();
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
     private Hospital hospital;
 
     @Override

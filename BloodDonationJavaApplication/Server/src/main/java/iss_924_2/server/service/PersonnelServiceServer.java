@@ -38,9 +38,9 @@ public class PersonnelServiceServer implements PersonnelService {
         // TODO implement here
 
         Optional<Donor> optionalDonor = donorRepository.findById(id);
-        String phoneNumber;
+        String phoneNumber = "";
 
-        phoneNumber = optionalDonor.ifPresent(donor -> donor.getPhoneNumber());
+        //phoneNumber = optionalDonor.ifPresent(donor -> donor.getPhoneNumber());
 
         return phoneNumber;
     }

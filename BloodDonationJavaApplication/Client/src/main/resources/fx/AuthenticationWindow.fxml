@@ -20,7 +20,7 @@
          <children>
             <Label alignment="CENTER" prefHeight="100.0" prefWidth="1000.0" text="Blood Donation">
                <font>
-                  <Font size="34.0" />
+                  <Font name="Trebuchet MS" size="34.0" />
                </font>
             </Label>
          </children>

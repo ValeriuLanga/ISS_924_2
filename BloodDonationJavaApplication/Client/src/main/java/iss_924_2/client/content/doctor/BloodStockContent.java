@@ -8,7 +8,7 @@ import javafx.scene.layout.AnchorPane;
 public class BloodStockContent extends AnchorPane {
 
     @FXML
-    private ListView bloodStockList;
+    private ListView<String> bloodStockList;
 
     public BloodStockContent() {
         FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../../../../../resources/fx/doctoractions/BloodStock.fxml"));
@@ -23,5 +23,9 @@ public class BloodStockContent extends AnchorPane {
         }
 
         bloodStockList = (ListView) this.lookup("#bloodStockList");
+    }
+
+    public ListView<String> getBloodStockList() {
+        return bloodStockList;
     }
 }

@@ -16,7 +16,7 @@
                   <Insets left="50.0" />
                </padding>
                <font>
-                  <Font size="24.0" />
+                  <Font name="Trebuchet MS" size="24.0" />
                </font>
             </Label>
             <ListView fx:id="listView" prefHeight="500.0" prefWidth="200.0" />
