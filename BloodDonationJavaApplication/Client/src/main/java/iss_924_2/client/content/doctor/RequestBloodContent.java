@@ -5,10 +5,7 @@ import iss_924_2.client.service.DonorServiceClient;
 import iss_924_2.core.service.DonorService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,7 +14,9 @@ import org.springframework.stereotype.Component;
 public class RequestBloodContent extends AnchorPane {
 
     @FXML
-    private TextField bloodGroupField;
+    private ComboBox<String> bloodTypeComboBox;
+    @FXML
+    private ComboBox<String> bloodContainerComboBox;
     @FXML
     private RadioButton highUrgency;
     @FXML
@@ -34,6 +33,10 @@ public class RequestBloodContent extends AnchorPane {
     private TextField locationCity;
     @FXML
     private TextField locationCountry;
+    @FXML
+    private Label requestBloodInfo;
+    @FXML
+    private TextField quantityField;
 
     private ToggleGroup toggleGroup;
 
@@ -51,7 +54,8 @@ public class RequestBloodContent extends AnchorPane {
             e.printStackTrace();
         }
 
-        bloodGroupField = (TextField) this.lookup("#bloodGroupField");
+        bloodTypeComboBox = (ComboBox) this.lookup("#bloodTypeComboBox");
+        bloodContainerComboBox = (ComboBox) this.lookup("#bloodContainerComboBox");
         highUrgency = (RadioButton) this.lookup("#highUrgency");
         mediumUrgency = (RadioButton) this.lookup("#mediumUrgency");
         lowUrgency = (RadioButton) this.lookup("#lowUrgency");
@@ -60,18 +64,33 @@ public class RequestBloodContent extends AnchorPane {
         locationNumber = (TextField) this.lookup("#locationNumber");
         locationCity = (TextField) this.lookup("#locationCity");
         locationCountry = (TextField) this.lookup("#locationCountry");
+        requestBloodInfo = (Label) this.lookup("#requestBloodInfo");
+        quantityField = (TextField) this.lookup("#quantityField");
+
+        bloodTypeComboBox.getItems().add("O1");
+        bloodTypeComboBox.getItems().add("A2");
+        bloodTypeComboBox.getItems().add("B3");
+        bloodTypeComboBox.getItems().add("AB4");
+
+        bloodContainerComboBox.getItems().add("Thrombocytes");
+        bloodContainerComboBox.getItems().add("Red Blood Cells");
+        bloodContainerComboBox.getItems().add("Plasma");
 
         toggleGroup = new ToggleGroup();
         highUrgency.setToggleGroup(toggleGroup);
         highUrgency.setUserData("High");
         mediumUrgency.setToggleGroup(toggleGroup);
-        highUrgency.setUserData("Medium");
+        mediumUrgency.setUserData("Medium");
         lowUrgency.setToggleGroup(toggleGroup);
-        highUrgency.setUserData("Low");
+        lowUrgency.setUserData("Low");
     }
 
     public String getBloodGroup() {
-        return bloodGroupField.toString();
+        return bloodTypeComboBox.getValue();
+    }
+
+    public String getBloodContainerComboBox() {
+        return bloodContainerComboBox.getValue();
     }
 
     public Button getRequestButton() {
@@ -97,4 +116,17 @@ public class RequestBloodContent extends AnchorPane {
     public String getLocationCountry() {
         return locationCountry.toString();
     }
+
+    public String getRequestBloodInfo() {
+        return requestBloodInfo.getText();
+    }
+
+    public void setRequestBloodInfo(String requestBloodInfo) {
+        this.requestBloodInfo.setText(requestBloodInfo);
+    }
+
+    public String getQuantityField() {
+        return quantityField.getText();
+    }
+
 }

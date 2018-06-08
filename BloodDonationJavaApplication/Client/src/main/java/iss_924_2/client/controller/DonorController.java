@@ -186,6 +186,7 @@ public class DonorController implements Initializable {
 
         List<String> list = donorServiceClient.viewBloodAnalysisHistory(donor.getId()).stream().map(Analysis::toString).collect(Collectors.toList());
 
+        System.out.println(list);
         ObservableList<String> obsList = FXCollections.observableList(list);
         viewHistoryContent.getListView().setItems(obsList);
 

@@ -22,7 +22,7 @@
                      <children>
                         <Label text="Blood Donation">
                            <font>
-                              <Font name="Algerian" size="26.0" />
+                              <Font name="Trebuchet MS" size="26.0" />
                            </font>
                         </Label>
                      </children>
@@ -31,7 +31,7 @@
                      <children>
                         <Label fx:id="userNameLabel" text="Name">
                            <font>
-                              <Font name="Algerian" size="22.0" />
+                              <Font name="Trebuchet MS" size="22.0" />
                            </font>
                         </Label>
                      </children>
@@ -40,7 +40,7 @@
                      <children>
                         <Label text="Donor">
                            <font>
-                              <Font name="Algerian" size="16.0" />
+                              <Font name="Trebuchet MS" size="16.0" />
                            </font>
                         </Label>
                      </children>

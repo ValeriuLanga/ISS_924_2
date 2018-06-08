@@ -28,17 +28,17 @@
                      <children>
                         <Label text="Fill Donation Form">
                            <font>
-                              <Font size="24.0" />
+                              <Font name="Trebuchet MS" size="24.0" />
                            </font>
                         </Label>
                         <Label layoutX="10.0" layoutY="43.0" text="Please check the donation requirements to see if you are eligible for donation!">
                            <font>
-                              <Font size="16.0" />
+                              <Font name="Trebuchet MS" size="16.0" />
                            </font>
                         </Label>
                         <Label fx:id="eligibilityLabel" layoutX="10.0" layoutY="65.0">
                            <font>
-                              <Font size="16.0" />
+                              <Font name="Trebuchet MS" size="16.0" />
                            </font>
                         </Label>
                      </children>
@@ -55,13 +55,13 @@
                            <children>
                               <Label text="First Name: ">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Trebuchet MS" size="14.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="donationFormFirstName" />
                               <Label text="Last Name: ">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Trebuchet MS" size="14.0" />
                                  </font>
                                  <padding>
                                     <Insets left="20.0" />
@@ -74,7 +74,7 @@
                            <children>
                               <Label text="Specific person name (optional): ">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Trebuchet MS" size="14.0" />
                                  </font>
                               </Label>
                               <TextField />
@@ -92,7 +92,7 @@
                <children>
                   <Label text="Date of birth: ">
                      <font>
-                        <Font size="14.0" />
+                        <Font name="Trebuchet MS" size="14.0" />
                      </font>
                   </Label>
                   <TextField fx:id="dateofbirth" />
@@ -107,7 +107,7 @@
                      <children>
                         <Label text="Address: ">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="Trebuchet MS" size="14.0" />
                            </font>
                         </Label>
                         <Label layoutX="10.0" layoutY="50.0" text="(Actual address from id card)" />
@@ -115,13 +115,13 @@
                            <children>
                               <Label prefHeight="25.0" text="Street: ">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Trebuchet MS" size="14.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="addressStreet" prefHeight="25.0" />
                               <Label layoutX="10.0" layoutY="13.0" prefHeight="25.0" text="Number: ">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Trebuchet MS" size="14.0" />
                                  </font>
                                  <padding>
                                     <Insets left="20.0" />
@@ -134,13 +134,13 @@
                            <children>
                               <Label prefHeight="25.0" text="City: ">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Trebuchet MS" size="14.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="addressCity" prefHeight="25.0" />
                               <Label layoutX="10.0" layoutY="13.0" prefHeight="25.0" text="Country: ">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Trebuchet MS" size="14.0" />
                                  </font>
                                  <padding>
                                     <Insets left="20.0" />
@@ -163,7 +163,7 @@
                      <children>
                         <Label text="Residence (optional): ">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="Trebuchet MS" size="14.0" />
                            </font>
                         </Label>
                         <Label layoutX="10.0" layoutY="50.0" text="(Only if you live at another address other than the one in your id card)" />
@@ -171,13 +171,13 @@
                            <children>
                               <Label prefHeight="25.0" text="Street: ">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Trebuchet MS" size="14.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="residenceStreet" prefHeight="25.0" />
                               <Label layoutX="10.0" layoutY="13.0" prefHeight="25.0" text="Number: ">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Trebuchet MS" size="14.0" />
                                  </font>
                                  <padding>
                                     <Insets left="20.0" />
@@ -190,13 +190,13 @@
                            <children>
                               <Label prefHeight="25.0" text="City: ">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Trebuchet MS" size="14.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="residenceCity" prefHeight="25.0" />
                               <Label layoutX="10.0" layoutY="13.0" prefHeight="25.0" text="Country: ">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Trebuchet MS" size="14.0" />
                                  </font>
                                  <padding>
                                     <Insets left="20.0" />

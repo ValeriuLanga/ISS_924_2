@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Entity
 public class Analysis extends BaseEntity<Integer> {
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private Doctor doctor;
 
     private boolean validity;

@@ -1,5 +1,6 @@
 package iss_924_2.client.service;
 
+import iss_924_2.core.domain.Donor;
 import iss_924_2.core.domain.User;
 import iss_924_2.core.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class LoginServiceClient implements LoginService {
     }
 
     @Override
-    public void RegisterNewUser(String userName, String password, String firstName, String lastName) {
-        loginService.RegisterNewUser(userName, password, firstName, lastName);
+    public void RegisterNewUser(Donor donor) {
+        loginService.RegisterNewUser(donor);
     }
 }

@@ -1,8 +1,6 @@
 package iss_924_2.core.service;
 
-import iss_924_2.core.domain.Blood;
-import iss_924_2.core.domain.BloodContainer;
-import iss_924_2.core.domain.Hospital;
+import iss_924_2.core.domain.*;
 import iss_924_2.core.utils.RequestStatus;
 
 import java.util.Set;
@@ -11,15 +9,15 @@ public interface DoctorService {
 
 
     /**
-     * @param bloodContainer
+     * @param bloodRequest
      *
      */
-    void requestBlood(BloodContainer bloodContainer, int quantity, int urgencyLevel);
+    void requestBlood(Request bloodRequest, Doctor doctor);
 
     /**
      *
      */
-    RequestStatus checkRequestStatus(int id);
+    Set<Request> checkRequestStatus(int id);
 
     /**
      *
@@ -27,13 +25,8 @@ public interface DoctorService {
     void cancelBloodRequest(int id);
 
     /**
-     *
+     * @param hospitalId
      */
-    boolean checkDonationForPerson();
-
-    /**
-     * @param hospital
-     */
-    Set<BloodContainer> getAvailableStocks(Hospital hospital);
+    Set<BloodContainer> getAvailableStocks(int hospitalId);
 
 }

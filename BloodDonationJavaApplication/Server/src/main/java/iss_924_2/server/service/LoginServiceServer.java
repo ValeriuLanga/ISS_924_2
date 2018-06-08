@@ -1,5 +1,6 @@
 package iss_924_2.server.service;
 
+import iss_924_2.core.domain.Donor;
 import iss_924_2.core.exceptions.LoginServiceException;
 import iss_924_2.core.utils.UserType;
 import iss_924_2.server.repository.UserRepository;
@@ -43,9 +44,7 @@ public class LoginServiceServer implements LoginService {
     }
 
     @Override
-    public void RegisterNewUser(String userName, String password, String firstName, String lastName) {
-        User newUser = new User(userName, password, firstName, lastName, UserType.Donor);
-
-        userRepository.save(newUser);
+    public void RegisterNewUser(Donor donor) {
+        userRepository.save(donor);
     }
 }

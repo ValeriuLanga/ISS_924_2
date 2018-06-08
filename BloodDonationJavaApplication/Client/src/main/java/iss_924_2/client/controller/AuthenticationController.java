@@ -6,10 +6,12 @@ import iss_924_2.client.content.authentication.RegisterContent;
 import iss_924_2.client.service.DoctorServiceClient;
 import iss_924_2.client.service.DonorServiceClient;
 import iss_924_2.client.service.LoginServiceClient;
+import iss_924_2.core.domain.Address;
 import iss_924_2.core.domain.Doctor;
 import iss_924_2.core.domain.Donor;
 import iss_924_2.core.domain.User;
 import iss_924_2.core.exceptions.LoginServiceException;
+import iss_924_2.core.utils.UserType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -64,6 +66,10 @@ public class AuthenticationController implements Initializable {
             if (loginButton.getText().equals("Login")) {
                 changeContentToRegister();
                 loginButton.setText("Back");
+            } else if (loginButton.getText().equals("Back")){
+                register();
+                changeContentToLogin();
+                loginButton.setText("Login");
             }
         });
 
@@ -76,6 +82,42 @@ public class AuthenticationController implements Initializable {
                 login();
             }
         });
+    }
+
+    private void register() {
+        Address address = new Address();
+        address.setStreet(registerContent.getAddressStreet());
+        address.setNumber(registerContent.getAddressNumber());
+        address.setCity(registerContent.getAddressCity());
+        address.setCountry(registerContent.getAddressCountry());
+
+        Donor newDonor = new Donor();
+        newDonor.setUserType(UserType.Donor);
+        newDonor.setUserName(registerContent.getRegisterUsername());
+        newDonor.setPassword(registerContent.getRegisterPassword());
+        newDonor.setFirstName(registerContent.getRegisterFirstName());
+        newDonor.setLastName(registerContent.getRegisterLastName());
+        newDonor.setDateOfBirth(registerContent.getRegisterDate());
+        newDonor.setPhoneNumber(registerContent.getPhoneNumber());
+
+        newDonor.setAddress(address);
+
+        if (registerContent.getActualAddressStreet().equals("") ||
+                registerContent.getActualAddressNumber().equals("") ||
+                registerContent.getActualAddressCity().equals("") ||
+                registerContent.getActualAddressCountry().equals("")){
+            newDonor.setActualAddress(address);
+        } else {
+            Address residence = new Address();
+            residence.setStreet(registerContent.getActualAddressStreet());
+            residence.setNumber(registerContent.getActualAddressNumber());
+            residence.setCity(registerContent.getActualAddressCity());
+            residence.setCountry(registerContent.getActualAddressCountry());
+
+            newDonor.setActualAddress(residence);
+        }
+
+        loginServiceClient.RegisterNewUser(newDonor);
     }
 
     private void login() {
