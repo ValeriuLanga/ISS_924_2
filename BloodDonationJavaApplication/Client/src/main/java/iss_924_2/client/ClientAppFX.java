@@ -37,11 +37,16 @@ public class ClientAppFX extends Application {
 
     @Override
     public void start(Stage mainStage) {
-        springContext = new AnnotationConfigApplicationContext("iss_924_2.client.configuration");
-        this.mainStage = mainStage;
-        this.mainStage.setTitle("Blood Donation");
-        changeScreenToAuthentication();
-        this.mainStage.show();
+        try {
+            springContext = new AnnotationConfigApplicationContext("iss_924_2.client.configuration");
+            this.mainStage = mainStage;
+            this.mainStage.setTitle("Blood Donation");
+            changeScreenToAuthentication();
+            this.mainStage.show();
+        } catch (Exception e) {
+            System.out.print("Unknown exception code.");
+            this.mainStage.close();
+        }
     }
 
     public static void main(String[] args) {
