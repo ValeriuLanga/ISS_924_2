@@ -41,6 +41,8 @@ public class DonationFormContent extends AnchorPane {
     @FXML
     private TextField residenceCountry;
     @FXML
+    private TextField patientName;
+    @FXML
     private Button submitButton;
 
     public DonationFormContent(Donor d) {
@@ -71,6 +73,7 @@ public class DonationFormContent extends AnchorPane {
         residenceCountry = (TextField) this.lookup("#residenceCountry");
         submitButton = (Button) this.lookup("#submitButton");
         infoLabel = (Label) this.lookup("#infolabel");
+        patientName = (TextField) this.lookup("#patientName");
 
         donationFormDateOfBirth.setText(donor.getDateOfBirth());
         donationFormFirstName.setText(donor.getFirstName());
@@ -83,11 +86,6 @@ public class DonationFormContent extends AnchorPane {
         residenceCountry.setText(donor.getActualAddress().getCountry());
         residenceCity.setText(donor.getActualAddress().getCity());
         residenceNumber.setText(donor.getActualAddress().getNumber());
-
-        submitButton.setOnAction(event -> {
-            infoLabel.setText("Donation form submitted!");
-        });
-
 
     }
 
@@ -177,5 +175,17 @@ public class DonationFormContent extends AnchorPane {
 
     public void setResidenceCountry(String residenceCountry) {
         this.residenceCountry.setText(residenceCountry);
+    }
+
+    public Button getSubmitButton() {
+        return submitButton;
+    }
+
+    public void setInfoLabel(String infoLabel) {
+        this.infoLabel.setText(infoLabel);
+    }
+
+    public String getPatientName() {
+        return patientName.getText();
     }
 }

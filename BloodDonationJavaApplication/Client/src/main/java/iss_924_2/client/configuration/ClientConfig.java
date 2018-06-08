@@ -68,16 +68,16 @@ public class ClientConfig {
         return proxy;
     }
 
-//    @Bean
-//    PersonnelService providePersonnelServiceClient(){
-//        return new PersonnelServiceClient();
-//    }
-//
-//    @Bean
-//    RmiProxyFactoryBean rmiProxyFactoryBeanPersonnel(){
-//        RmiProxyFactoryBean proxy=new RmiProxyFactoryBean();
-//        proxy.setServiceInterface(PersonnelService.class);
-//        proxy.setServiceUrl("rmi://localhost:1099/PersonnelService");
-//        return proxy;
-//    }
+    @Bean
+    PersonnelServiceClient providePersonnelServiceClient(){
+        return new PersonnelServiceClient();
+    }
+
+    @Bean(name = "PersonnelServiceClient")
+    RmiProxyFactoryBean rmiProxyFactoryBeanPersonnel(){
+        RmiProxyFactoryBean proxy=new RmiProxyFactoryBean();
+        proxy.setServiceInterface(PersonnelService.class);
+        proxy.setServiceUrl("rmi://localhost:1099/PersonnelService");
+        return proxy;
+    }
 }

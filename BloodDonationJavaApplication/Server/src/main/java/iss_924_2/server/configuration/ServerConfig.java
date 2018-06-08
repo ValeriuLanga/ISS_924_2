@@ -3,9 +3,11 @@ package iss_924_2.server.configuration;
 import iss_924_2.core.service.DoctorService;
 import iss_924_2.core.service.DonorService;
 import iss_924_2.core.service.LoginService;
+import iss_924_2.core.service.PersonnelService;
 import iss_924_2.server.service.DoctorServiceServer;
 import iss_924_2.server.service.DonorServiceServer;
 import iss_924_2.server.service.LoginServiceServer;
+import iss_924_2.server.service.PersonnelServiceServer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -52,6 +54,18 @@ public class ServerConfig {
         exporter.setServiceName("DoctorService");
         exporter.setServiceInterface(DoctorService.class);
         exporter.setService(provideDoctorService());
+        return exporter;
+    }
+
+    @Bean
+    PersonnelService providePersonnelService() { return new PersonnelServiceServer(); }
+
+    @Bean
+    RmiServiceExporter rmiServiceExporterPersonnel(){
+        RmiServiceExporter exporter = new RmiServiceExporter();
+        exporter.setServiceName("PersonnelService");
+        exporter.setServiceInterface(PersonnelService.class);
+        exporter.setService(providePersonnelService());
         return exporter;
     }
 }
