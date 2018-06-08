@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <VBox layoutX="2.0" prefHeight="581.0" prefWidth="700.0" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="50.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                    <padding>
+                        <Insets left="20.0" />
+                    </padding>
+                    <children>
+                        <Label text="User Dashboard">
+                            <font>
+                                <Font name="Trebuchet MS" size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                    <padding>
+                        <Insets left="20.0" />
+                    </padding>
+                    <children>
+                        <Label prefHeight="50.0" text="Name: ">
+                            <font>
+                                <Font name="Trebuchet MS" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="userFirstAndLastName" layoutX="30.0" layoutY="35.0" prefHeight="50.0" text="First + Last">
+                            <font>
+                                <Font name="Trebuchet MS" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="30.0" layoutY="35.0" prefHeight="50.0" text="Username: ">
+                            <font>
+                                <Font name="Trebuchet MS" size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="50.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Label fx:id="userUsername" layoutX="224.0" layoutY="35.0" prefHeight="50.0" text="username">
+                            <font>
+                                <Font name="Trebuchet MS" size="18.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="230.0">
+                    <padding>
+                        <Insets left="20.0" />
+                    </padding>
+                    <children>
+                        <Button fx:id="changePasswordSwitch" mnemonicParsing="false" prefHeight="31.0" prefWidth="224.0" text="Change password" />
+                        <HBox fx:id="changePasswordHbox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="549.0" visible="false">
+                            <HBox.margin>
+                                <Insets left="20.0" />
+                            </HBox.margin>
+                            <children>
+                                <VBox prefHeight="100.0" prefWidth="300.0">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="33.0" prefWidth="200.0">
+                                            <children>
+                                                <Label prefHeight="25.0" prefWidth="111.0" text="Old password: " />
+                                                <PasswordField fx:id="oldPassword" />
+                                            </children></HBox>
+                                        <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="200.0">
+                                            <children>
+                                                <Label prefHeight="25.0" prefWidth="111.0" text="New password: " />
+                                                <PasswordField fx:id="newPassword" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="200.0">
+                                            <children>
+                                                <Label prefHeight="25.0" prefWidth="111.0" text="Retype new: " />
+                                                <PasswordField fx:id="retypeNew" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="150.0">
+                                    <children>
+                                        <Button fx:id="changePasswordButton" mnemonicParsing="false" prefHeight="25.0" text="Change">
+                                            <VBox.margin>
+                                                <Insets bottom="12.0" top="12.0" />
+                                            </VBox.margin>
+                                        </Button>
+                                        <Label fx:id="changePasswordInfo" prefHeight="50.0" textAlignment="CENTER" wrapText="true">
+                                            <VBox.margin>
+                                                <Insets bottom="12.0" top="12.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                    <padding>
+                        <Insets left="20.0" />
+                    </padding>
+                    <children>
+                        <Button fx:id="changeNameSwitch" mnemonicParsing="false" prefHeight="31.0" prefWidth="168.0" text="Change name" />
+                        <HBox fx:id="changeNameHbox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="450.0" visible="false">
+                            <children>
+                                <VBox prefHeight="100.0" prefWidth="300.0">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                                            <children>
+                                                <Label prefHeight="25.0" prefWidth="84.0" text="First name: " />
+                                                <TextField fx:id="changeFirstNameField" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0">
+                                            <children>
+                                                <Label prefHeight="25.0" prefWidth="84.0" text="Last name: " />
+                                                <TextField fx:id="changeLastNameField" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="150.0">
+                                    <children>
+                                        <Button fx:id="changeNameButton" mnemonicParsing="false" prefHeight="25.0" text="Change">
+                                            <VBox.margin>
+                                                <Insets bottom="12.0" top="12.0" />
+                                            </VBox.margin>
+                                        </Button>
+                                        <Label fx:id="changeNameInfo" prefHeight="25.0" textAlignment="CENTER" wrapText="true">
+                                            <VBox.margin>
+                                                <Insets bottom="12.0" top="12.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                            <HBox.margin>
+                                <Insets left="20.0" />
+                            </HBox.margin>
+                        </HBox>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="310.0" prefHeight="100.0" prefWidth="200.0">
+                    <padding>
+                        <Insets left="20.0" />
+                    </padding>
+                    <children>
+                        <Button fx:id="changeAddressSwitch" mnemonicParsing="false" prefWidth="168.0" text="Change address" />
+                        <HBox fx:id="changeAddressHbox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="450.0" visible="false">
+                            <children>
+                                <VBox prefHeight="100.0" prefWidth="300.0">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="25.0" prefWidth="200.0">
+                                            <children>
+                                                <Label prefHeight="25.0" prefWidth="84.0" text="Street:" />
+                                                <TextField fx:id="changeAddressStreet" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="200.0">
+                                            <children>
+                                                <Label prefHeight="25.0" prefWidth="84.0" text="Number:" />
+                                                <TextField fx:id="changeAddressNumber" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="25.0" prefWidth="200.0">
+                                            <children>
+                                                <Label prefHeight="25.0" prefWidth="84.0" text="City:" />
+                                                <TextField fx:id="changeAddressCity" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="25.0" prefWidth="200.0">
+                                            <children>
+                                                <Label prefHeight="25.0" prefWidth="84.0" text="Country:" />
+                                                <TextField fx:id="changeAddressCountry" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="150.0">
+                                    <children>
+                                        <Button fx:id="changeAddressButton" mnemonicParsing="false" prefHeight="25.0" text="Change">
+                                            <VBox.margin>
+                                                <Insets bottom="12.0" top="12.0" />
+                                            </VBox.margin>
+                                        </Button>
+                                        <Label fx:id="changeAddressInfo" prefHeight="25.0" textAlignment="CENTER" wrapText="true">
+                                            <VBox.margin>
+                                                <Insets bottom="12.0" top="12.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                            <HBox.margin>
+                                <Insets left="20.0" />
+                            </HBox.margin>
+                        </HBox>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="410.0" prefHeight="100.0" prefWidth="200.0">
+                    <padding>
+                        <Insets left="20.0" />
+                    </padding>
+                    <children>
+                        <Button fx:id="changeResidenceSwitch" mnemonicParsing="false" prefWidth="168.0" text="Change residence" />
+                        <HBox fx:id="changeResidenceHbox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="450.0" visible="false">
+                            <children>
+                                <VBox prefHeight="100.0" prefWidth="300.0">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="25.0" prefWidth="200.0">
+                                            <children>
+                                                <Label prefHeight="25.0" prefWidth="84.0" text="Street:" />
+                                                <TextField fx:id="changeResidenceStreet" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="200.0">
+                                            <children>
+                                                <Label prefHeight="25.0" prefWidth="84.0" text="Number:" />
+                                                <TextField fx:id="changeResidenceNumber" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="25.0" prefWidth="200.0">
+                                            <children>
+                                                <Label prefHeight="25.0" prefWidth="84.0" text="City:" />
+                                                <TextField fx:id="changeResidenceCity" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="25.0" prefWidth="200.0">
+                                            <children>
+                                                <Label prefHeight="25.0" prefWidth="84.0" text="Country:" />
+                                                <TextField fx:id="changeResidenceCountry" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="150.0">
+                                    <children>
+                                        <Button fx:id="changeResidenceButton" mnemonicParsing="false" prefHeight="25.0" text="Change">
+                                            <VBox.margin>
+                                                <Insets bottom="12.0" top="12.0" />
+                                            </VBox.margin>
+                                        </Button>
+                                        <Label fx:id="changeResidenceInfo" prefHeight="25.0" textAlignment="CENTER" wrapText="true">
+                                            <VBox.margin>
+                                                <Insets bottom="12.0" top="12.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                            <HBox.margin>
+                                <Insets left="20.0" />
+                            </HBox.margin>
+                        </HBox>
+                    </children>
+                </HBox>
+            </children></VBox>
+    </children>
+</fx:root>
