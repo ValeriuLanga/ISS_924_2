@@ -22,6 +22,8 @@ public class RegisterContent extends AnchorPane {
     @FXML
     private DatePicker registerDate;
     @FXML
+    private TextField phoneNumber;
+    @FXML
     private TextField addressStreet;
     @FXML
     private TextField addressNumber;
@@ -55,6 +57,7 @@ public class RegisterContent extends AnchorPane {
         registerFirstName = (TextField) this.lookup("#registerFirstName");
         registerLastName = (TextField) this.lookup("#registerLastName");
         registerDate = (DatePicker) this.lookup("#registerDate");
+        phoneNumber = (TextField) this.lookup("#phoneNumber");
         addressStreet = (TextField) this.lookup("#addressStreet");
         addressNumber = (TextField) this.lookup("#addressNumber");
         addressCity = (TextField) this.lookup("#addressCity");
@@ -66,54 +69,58 @@ public class RegisterContent extends AnchorPane {
     }
 
     public String getRegisterUsername() {
-        return registerUsername.toString();
+        return registerUsername.getText();
     }
 
     public String getRegisterPassword() {
-        return registerPassword.toString();
+        return registerPassword.getText();
     }
 
     public String getRegisterFirstName() {
-        return registerFirstName.toString();
+        return registerFirstName.getText();
     }
 
     public String getRegisterLastName() {
-        return registerLastName.toString();
+        return registerLastName.getText();
     }
 
     public String getRegisterDate() {
-        return registerDate.toString();
+        return registerDate.getEditor().textProperty().getValue();
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber.getText();
     }
 
     public String getAddressStreet() {
-        return addressStreet.toString();
+        return addressStreet.getText();
     }
 
     public String getAddressNumber() {
-        return addressNumber.toString();
+        return addressNumber.getText();
     }
 
     public String getAddressCity() {
-        return addressCity.toString();
+        return addressCity.getText();
     }
 
     public String getAddressCountry() {
-        return addressCountry.toString();
+        return addressCountry.getText();
     }
 
     public String getActualAddressStreet() {
-        return actualAddressStreet.toString();
+        return actualAddressStreet.getText();
     }
 
     public String getActualAddressNumber() {
-        return actualAddressNumber.toString();
+        return actualAddressNumber.getText();
     }
 
     public String getActualAddressCity() {
-        return actualAddressCity.toString();
+        return actualAddressCity.getText();
     }
 
     public String getActualAddressCountry() {
-        return actualAddressCountry.toString();
+        return actualAddressCountry.getText();
     }
 }
