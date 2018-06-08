@@ -4,6 +4,7 @@ import iss_924_2.client.content.doctor.BloodStockContent;
 import iss_924_2.client.content.doctor.CheckStatusContent;
 import iss_924_2.client.content.doctor.RequestBloodContent;
 import iss_924_2.client.service.DoctorServiceClient;
+import iss_924_2.client.service.LoginServiceClient;
 import iss_924_2.core.domain.BloodContainer;
 import iss_924_2.core.domain.Doctor;
 import iss_924_2.core.domain.Request;
@@ -13,13 +14,18 @@ import iss_924_2.core.utils.RequestStatus;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +39,7 @@ public class DoctorController implements Initializable {
     AnnotationConfigApplicationContext springContext;
     DoctorServiceClient doctorServiceClient;
     Doctor doctor;
+    Stage mainStage;
 
     @FXML
     private BorderPane mainPane;
@@ -44,6 +51,8 @@ public class DoctorController implements Initializable {
     private Button checkStatusButton;
     @FXML
     private Button availableBloodButton;
+    @FXML
+    private Button logout;
 
     private BloodStockContent bloodStockContent;
     private CheckStatusContent checkStatusContent;
@@ -158,6 +167,21 @@ public class DoctorController implements Initializable {
         checkStatusButton.setOnAction(event -> changeContentToCheckStatus());
 
         availableBloodButton.setOnAction(event -> changeContentToBloodStock());
+
+        logout.setOnAction(event ->{
+            try {
+                mainStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../../../resources/fx/AuthenticationWindow.fxml"));
+
+                AuthenticationController authenticationController = new AuthenticationController(springContext.getBean(LoginServiceClient.class), springContext);
+                fxmlLoader.setController(authenticationController);
+
+                mainStage.setScene(new Scene(fxmlLoader.load()));
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
+        });
+
     }
 
 }
