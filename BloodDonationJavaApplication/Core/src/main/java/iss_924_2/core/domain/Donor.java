@@ -19,8 +19,6 @@ public class Donor extends User {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Address address;
 
-    private String phoneNumber;
-
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Address actualAddress;
 
