@@ -178,6 +178,14 @@ public class DonorController implements Initializable {
 
     private void changeContentToFillDonationForm() {
         donationFormContent = new DonationFormContent(donor);
+
+
+        donationFormContent.getSubmitButton().setOnAction(event -> {
+            donorServiceClient.donateToSpecificPerson(donor.getId(), donationFormContent.getPatientName());
+
+            donationFormContent.setInfoLabel("Submitted!");
+        });
+
         mainPane.setCenter(donationFormContent);
     }
 

@@ -6,10 +6,8 @@ import iss_924_2.client.content.authentication.RegisterContent;
 import iss_924_2.client.service.DoctorServiceClient;
 import iss_924_2.client.service.DonorServiceClient;
 import iss_924_2.client.service.LoginServiceClient;
-import iss_924_2.core.domain.Address;
-import iss_924_2.core.domain.Doctor;
-import iss_924_2.core.domain.Donor;
-import iss_924_2.core.domain.User;
+import iss_924_2.client.service.PersonnelServiceClient;
+import iss_924_2.core.domain.*;
 import iss_924_2.core.exceptions.LoginServiceException;
 import iss_924_2.core.utils.UserType;
 import javafx.fxml.FXML;
@@ -160,6 +158,33 @@ public class AuthenticationController implements Initializable {
                         ex.printStackTrace();
                     }
                     break;
+                }
+                case("Admin") : {
+                    try {
+                        Administrator administrator = (Administrator) user;
+                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../../../resources/fx/AdminWindow.fxml"));
+
+                        AdminController adminController = new AdminController(springContext.getBean(DonorServiceClient.class), springContext, administrator);
+                        fxmlLoader.setController(adminController);
+
+                        mainStage.setScene(new Scene(fxmlLoader.load()));
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                    break;
+                }
+                case("Personnel") : {
+                    try {
+                        Personnel personnel = (Personnel) user;
+                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../../../../resources/fx/PersonnelWindow.fxml"));
+
+                        PersonnelController personnelController = new PersonnelController(springContext.getBean(PersonnelServiceClient.class), springContext, personnel);
+                        fxmlLoader.setController(personnelController);
+
+                        mainStage.setScene(new Scene(fxmlLoader.load()));
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
                 }
             }
 

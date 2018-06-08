@@ -4,15 +4,16 @@ import iss_924_2.core.domain.Donor;
 import iss_924_2.core.domain.Patient;
 import iss_924_2.core.service.PersonnelService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class PersonnelServiceClient implements PersonnelService {
 
     @Autowired
+    @Qualifier("PersonnelServiceClient")
     PersonnelService personnelService;
 
     @Override
     public void collectData() {
-
     }
 
     @Override
