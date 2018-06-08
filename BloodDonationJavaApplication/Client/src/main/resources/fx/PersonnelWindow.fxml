@@ -71,16 +71,6 @@
                         </Button>
                      </children>
                   </HBox>
-                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="200.0" />
-                  <HBox alignment="CENTER" layoutX="10.0" layoutY="346.0" prefHeight="42.0" prefWidth="200.0">
-                     <children>
-                        <Button fx:id="requirementsButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" text="Requirements">
-                           <font>
-                              <Font name="Corbel" size="19.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </HBox>
                </children>
             </VBox>
          </children></Pane>

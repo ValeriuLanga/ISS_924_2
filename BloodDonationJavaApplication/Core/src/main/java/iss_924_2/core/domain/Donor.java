@@ -28,4 +28,12 @@ public class Donor extends User {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Patient patient;
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Name: " + super.getFirstName() + " " + super.getLastName());
+        sb.append(", Date of birth: " + this.getDateOfBirth());
+        sb.append(", Phone number: " + this.getPhoneNumber());
+        return sb.toString();
+    }
 }

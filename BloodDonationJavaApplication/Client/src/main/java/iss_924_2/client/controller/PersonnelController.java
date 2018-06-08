@@ -77,12 +77,18 @@ public class PersonnelController implements Initializable {
 
         requestsListContent.getRequestsList().setItems(values);
 
-        mainPane.setCenter(donorListContent);
+        mainPane.setCenter(requestsListContent);
     }
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         changeContentToSeeDonors();
+
+        userNameLabel.setText(personnel.getFirstName());
+
+        seeDonorListButton.setOnAction(event -> changeContentToSeeDonors());
+
+        seeRequestsButton.setOnAction(event -> changeContentToSeeRequests());
     }
 }
