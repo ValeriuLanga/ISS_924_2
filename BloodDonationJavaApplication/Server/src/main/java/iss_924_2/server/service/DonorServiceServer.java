@@ -1,14 +1,15 @@
 package iss_924_2.server.service;
 
-import iss_924_2.core.domain.Address;
-import iss_924_2.core.domain.Analysis;
-import iss_924_2.core.domain.Donor;
-import iss_924_2.core.domain.User;
+import iss_924_2.core.domain.*;
 import iss_924_2.server.repository.Repository;
 import iss_924_2.core.service.DonorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.swing.text.html.Option;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /**
@@ -21,6 +22,9 @@ public class DonorServiceServer implements DonorService {
 
     @Autowired
     private Repository analysisRepository;
+
+    @Autowired
+    private Repository patientRepository;
 
     public List<Donor> getAllDonors(){
         List<Donor> l =  donorRepository.findAll();
@@ -42,8 +46,25 @@ public class DonorServiceServer implements DonorService {
     }
 
     public String viewNextDonationDate(int id) {
-        // TODO implement here
 
+        Optional<Donor> donor = donorRepository.findById(id);
+        String dateString = donor.get().getDonation().stream().findFirst().get().getDonationDate();
+
+        DateFormat format = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+        try {
+            Date date = format.parse(dateString);
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(date);
+            cal.add(Calendar.MONTH, 6);
+
+            SimpleDateFormat format1 = new SimpleDateFormat("dd-MM-yyyy");
+            String formatted = format1.format(cal.getTime());
+
+            return formatted;
+        }
+        catch (java.text.ParseException e) {
+            e.printStackTrace();
+        }
 
         return null;
     }
@@ -82,9 +103,16 @@ public class DonorServiceServer implements DonorService {
     }
 
     public void donateToSpecificPerson(int id, String name) {
-        // TODO implement here
+        List<Patient> patients =  patientRepository.findAll();
+        int patientId = patients.stream().filter(p -> p.getName() == name).findFirst().get().getId();
 
+        Optional<Donor> donorOpt = donorRepository.findById(id);
+        donorOpt.ifPresent(donor ->  {
+            Optional<Patient> patientOpt = patientRepository.findById(id);
+            patientOpt.ifPresent(patient -> donor.setPatient(patient));
+        });
 
+        donorRepository.save(donorOpt.get());
     }
 
 }

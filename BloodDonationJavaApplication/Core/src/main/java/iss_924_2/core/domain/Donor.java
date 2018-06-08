@@ -25,4 +25,7 @@ public class Donor extends User {
     @OneToMany(mappedBy = "donor", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private Set<Donation> donation = new HashSet<>();
 
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Patient patient;
+
 }
